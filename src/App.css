@@ -70,7 +70,7 @@ nav{
   justify-content: space-between;
   width: 1200px;
   margin: 0 auto;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 
 .nav__icon{
@@ -102,7 +102,6 @@ nav{
 
 .nav__options ul{
   display: flex;
-  gap: 0.5rem;
   justify-content: end;
   height: 100%;
 }
@@ -112,7 +111,7 @@ nav{
   list-style: none;
   display: flex;
   align-items: center;
-  padding: 0 0.2rem;
+  padding: 0 0.75rem;
 }
 
 .nav__options ul li:hover{
@@ -122,7 +121,7 @@ nav{
 /* Home */
 
 .home__container{
-  padding: calc(12vh + 1rem) 0 2rem 0;
+  padding: calc(10vh + 1rem) 0 2rem 0;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -133,7 +132,7 @@ nav{
 
 .input-container{
   margin-bottom: 0.25rem;
-  padding: 0 0.20rem;
+  padding: 0 1rem;
 }
 
 .input-container form{
@@ -147,6 +146,7 @@ nav{
   padding: 0.5rem;
   width: 100%;
   font-size: 1em;
+  border-radius: 0;
 }
 
 .input-container form input:focus{
@@ -155,9 +155,13 @@ nav{
 
 .input-container form button{
   color: black;
+  background-color: white;
   border: none;
   padding: 0.5rem 0.75rem;
-  background-color: transparent;
+}
+
+.input-container form button:focus{
+  outline: none;
 }
 
 .input-container form button:hover{
@@ -167,7 +171,7 @@ nav{
 .filter-container{
   display: flex;
   justify-content: flex-end;
-  padding: 0 0.20rem;
+  padding: 0 1rem;
 }
 
 .btn-for-filter{
@@ -536,7 +540,7 @@ nav{
 
 .product-detailed-container{
   padding: 0.2rem;
-  padding-top: calc(12vh + 1rem);
+  padding-top: calc(10vh + 1rem);
 }
 
 .pd-btn-container{
@@ -729,7 +733,7 @@ nav{
   justify-content: center;
   gap: 1rem;
   padding: 0.2rem;
-  padding-top: calc(8vh + 2rem);
+  padding-top: calc(10vh + 2rem);
 }
 
 .login-test-container{
@@ -832,7 +836,7 @@ nav{
 
 .user-view-container{
   padding: 2rem;
-  padding-top: calc(12vh + 2rem);
+  padding-top: calc(10vh + 2rem);
 }
 
 .user-data-container{
@@ -877,7 +881,7 @@ nav{
 
 .purchases-view-container{
   padding: 1rem 0.2rem;
-  padding-top: calc(12vh + 1rem);
+  padding-top: calc(10vh + 1rem);
 }
 
 .purchases-view-container h2{
@@ -1052,13 +1056,14 @@ nav{
 }
 
 .ft-social-media-container{
-  margin: 1rem 0;
+  margin: 4rem 0 0.5rem 0;
 }
 
 .ft-social-media-container ul{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.2rem;
 }
 
 .ft-social-media-container a i{

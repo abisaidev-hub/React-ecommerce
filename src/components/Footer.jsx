@@ -34,6 +34,7 @@ const Footer = () => {
         <div className="ft-about-container">
           <h3>COMPANY</h3>
           <ul>
+            <li>ABOUT</li>
             <li>TERMS & CONDITIONS</li>
             <li>PRIVACY POLICY</li>
           </ul>
@@ -65,17 +66,17 @@ const Footer = () => {
           <ul>
             <li>
               <a href="https://www.instagram.com/" target='_blank'>
-                <i className='bx bxl-instagram-alt bx-md' ></i>
+                <i className='bx bxl-instagram-alt bx-sm' ></i>
               </a>
             </li>
             <li>
               <a href="https://www.facebook.com/" target='_blank'>
-                <i className='bx bxl-facebook bx-md'></i>
+                <i className='bx bxl-facebook bx-sm'></i>
               </a>
             </li>
             <li>
               <a href="https://twitter.com/" target='_blank'>
-                <i className='bx bxl-twitter bx-md' ></i>
+                <i className='bx bxl-twitter bx-sm' ></i>
               </a>
             </li>
           </ul>
@@ -87,12 +88,12 @@ const Footer = () => {
           <ul>
             <li>
               <a href="https://www.linkedin.com/in/abisaidev" target="_blank">
-                <i className='bx bxl-linkedin-square bx-md' ></i>
+                <i className='bx bxl-linkedin-square bx-sm' ></i>
               </a>
             </li>
             <li>
               <a href="https://github.com/abisaidev-hub" target='_blank'>
-                <i className='bx bxl-github bx-md' ></i>
+                <i className='bx bxl-github bx-sm' ></i>
               </a>
             </li>
           </ul>
