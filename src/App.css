@@ -191,6 +191,9 @@ nav{
 .filter-container__show-all{
   border: none;
   margin: 0 auto 0 0;
+  background-color: transparent;
+  color: black;
+  padding: 0 0.75rem;
 }
 
 .filter-container__show-all:hover{
@@ -337,8 +340,9 @@ nav{
 }
 
 .cart-data-container h2{
-  margin-bottom: 1.5rem;
   color: black;
+  width: fit-content;
+  padding: 0.2em 0.5rem;
 }
 
 .cart-items-container{
@@ -573,13 +577,16 @@ nav{
 
 .pd-btn-container button{
   color: black;
-  padding: 5px 8px 5px 0;
+  padding: 0 0.25rem;
   border: none;
   background-color: transparent;
   display: flex;
-  gap: 2px;
   align-items: center;
   justify-content: center;
+}
+
+.pd-btn-container button i{
+  transition: 0.5s;
 }
 
 .pd-btn-container button:hover{
@@ -588,6 +595,10 @@ nav{
 
 .pd-btn-container button:hover p{
   text-decoration: underline;
+}
+
+.pd-btn-container button:hover i{
+  transform: translate(-5px, 0);
 }
 
 .pd-category-container{
@@ -761,16 +772,17 @@ nav{
   gap: 1rem;
   padding: 0.2rem;
   padding-top: calc(10vh + 2rem);
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .login-test-container{
-  background-color: white;
   padding: 1rem;
   text-align: center;
 }
 
 .login-test-credentials-container{
-  background-color: #f3f3f3;
+  background-color: white;
   padding: 0.5rem;
   margin-top: 0.5rem;
 }
@@ -785,12 +797,21 @@ nav{
 }
 
 .login-form-container{
-  background-color: white;
   padding: 1rem;
 }
 
+.login-form-container form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form-container .line-bar{
+  background-color: rgb(194, 194, 194);
+}
+
 .login-form-container h2{
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: black;
 }
 
@@ -825,14 +846,17 @@ nav{
 }
 
 .login-input-container label{
-  font-size: 1.1rem;
+  font-size: 0.75em;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: rgb(100, 100, 100);
 }
 
 .login-input-container input{
   width: 100%;
   border: none;
   background-color: #f3f3f3;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   font-size: 1rem;
   border-radius: 0;
 }
@@ -915,6 +939,9 @@ nav{
 
 .purchases-view-container h2{
   margin-bottom: 1rem;
+  color: black;
+  padding: 0.2rem 0.4rem;
+  width: fit-content;
 }
 
 .pch-ul-container{
@@ -1013,7 +1040,7 @@ nav{
 
 .footer-container p{
   color: white;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .footer-container ul li{
@@ -1033,7 +1060,7 @@ nav{
 
 .footer-container ul li{
   color: rgb(150, 150, 150);
-  font-weight: 500;
+  font-weight: 600;
   width: fit-content;
   transition: 0.2s;
 }
@@ -1223,6 +1250,12 @@ nav{
 
   .pch-ul{
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* Login */
+
+  .login-container{
+    padding-top: calc(10vh + 7rem);
   }
 
 }

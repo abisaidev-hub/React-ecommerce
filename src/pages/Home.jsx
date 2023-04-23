@@ -6,6 +6,7 @@ import { getProductsThunk, filterProductsThunk } from '../store/slices/products.
 import { setIsShowing } from '../store/slices/isShowing.slice'
 import { getCartThunk } from '../store/slices/cart.slice';
 import { useNavigate } from 'react-router-dom'
+import { setShowAll } from '../store/slices/showAll.slice';
 
 const Home = () => {
 
@@ -38,6 +39,7 @@ const Home = () => {
   const submitForm = (e) => {
     e.preventDefault();
     dispatch(filterProductsThunk(searchedValueFixed));
+    dispatch(setShowAll(true));
   };
 
   const fillLine = () => {
@@ -69,7 +71,7 @@ const Home = () => {
         </div>
         <div className="filter-container">
           {showAll &&
-            <button className='filter-container__show-all' onClick={() => {
+            <button className='filter-container__show-all' onClick={(e) => {
               dispatch(getProductsThunk())
               window.scrollTo(0, 0)}}>
               SHOW ALL

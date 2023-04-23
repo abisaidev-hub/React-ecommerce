@@ -76,12 +76,12 @@ const Login = () => {
         <form onSubmit={handleSubmit(userFormSubmit)}>
           <div className="login-input-container">
             <label htmlFor="email">
-              Email
+              EMAIL ADDRESS
             </label>
             <input
               type="email"
               id='email'
-              placeholder='Your email'
+              placeholder='name@example.com'
               onFocus={fillLineEmail}
               {...register('email')}
               onBlur={unfillLineEmail}
@@ -90,13 +90,13 @@ const Login = () => {
           </div>
           <div className="login-input-container">
             <label htmlFor="password">
-              Password
+              PASSWORD
             </label>
             <div className="lg-input-container">
               <input
                 type={isShowingPassword ? "text" : 'password'}
                 id='password'
-                placeholder='Your password'
+                placeholder='Password'
                 onFocus={fillLinePassword}
                 {...register('password')}
                 onBlur={unfillLinePassword}

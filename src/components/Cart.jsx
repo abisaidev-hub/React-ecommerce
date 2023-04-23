@@ -93,7 +93,7 @@ const Cart = () => {
         (
         <div className="cart-data-container">
           <div className="cart-items-container">
-            <h2>Your shopping cart</h2>
+            <h2>Shopping cart</h2>
             <ul>
               {cart.map(item => (
                 <li key={item.id}>

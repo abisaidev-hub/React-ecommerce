@@ -63,7 +63,7 @@ const Purchases = () => {
   return (
     <div className='purchases-view-container'>
       <div className="pch-ul-container">
-        <h2>Your purchases</h2>
+        <h2>Purchase history</h2>
         <ul className='pch-ul'>
           {purchases.map(purchase => (
             <li key={purchase.id} className='pch-container'>
