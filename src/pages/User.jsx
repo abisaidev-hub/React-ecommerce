@@ -3,6 +3,7 @@ import defaultpp from '../images/default-pp.jpg'
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setIsCartWithProducts } from '../store/slices/isCartWithProducts.slice';
+import { useEffect } from 'react';
 
 const User = () => {
 
@@ -16,6 +17,10 @@ const User = () => {
     dispatch(setIsCartWithProducts(false));
     navigate('/');
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   return (
     <div className='user-view-container'>
