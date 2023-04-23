@@ -15,12 +15,22 @@ const NavBar = () => {
     dispatch(getCartThunk());
   }, []);
 
+  const user = () => {
+    navigate('/user');
+    window.scrollTo(0, 0);
+  }
+
+  const login = () => {
+    navigate('/login');
+    window.scrollTo(0, 0);
+  }
+
   const isCartWithProducts = useSelector(state => state.isCartWithProducts);
 
   let navBar = document.querySelector('nav');
   window.addEventListener('scroll', () =>{
 
-      if(window.scrollY ){
+      if(window.scrollY){
           navBar?.classList.add('nav-scroll')
       }else{
           navBar?.classList.remove('nav-scroll')
@@ -38,8 +48,7 @@ const NavBar = () => {
         </div>
         <div className="nav__options">
           <ul>
-            <li onClick={() => {token ? navigate('/user') : navigate('/login')
-              window.scrollTo(0, 0);}}>
+            <li onClick={() => {token ? user() : login()}}>
               <i className='bx bxs-user bx-sm'></i>
             </li>
             <li onClick={() => {navigate('/purchases')
