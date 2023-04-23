@@ -122,7 +122,7 @@ nav{
 /* Home */
 
 .home__container{
-  padding: calc(10vh + 1rem) 0 2rem 0;
+  padding: calc(12vh + 1rem) 0 2rem 0;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -536,7 +536,7 @@ nav{
 
 .product-detailed-container{
   padding: 0.2rem;
-  padding-top: calc(8vh + 1rem);
+  padding-top: calc(12vh + 1rem);
 }
 
 .pd-btn-container{
@@ -832,7 +832,7 @@ nav{
 
 .user-view-container{
   padding: 2rem;
-  padding-top: calc(8vh + 2rem);
+  padding-top: calc(12vh + 2rem);
 }
 
 .user-data-container{
@@ -877,7 +877,7 @@ nav{
 
 .purchases-view-container{
   padding: 1rem 0.2rem;
-  padding-top: calc(8vh + 1rem);
+  padding-top: calc(12vh + 1rem);
 }
 
 .purchases-view-container h2{
