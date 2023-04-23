@@ -1,17 +1,20 @@
 import React from 'react';
 import defaultpp from '../images/default-pp.jpg'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { setIsCartWithProducts } from '../store/slices/isCartWithProducts.slice';
 
 const User = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector(state => state.user);
 
   const logout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('username')
-    navigate('/')
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    dispatch(setIsCartWithProducts(false));
+    navigate('/');
   }
 
   return (

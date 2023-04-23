@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/slices/user.slice';
 import { setIsShowingPassword } from '../store/slices/isShowingPassword.slice';
 import { useEffect } from 'react';
+import { getCartThunk } from '../store/slices/cart.slice';
 
 const Login = () => {
 
@@ -29,7 +30,7 @@ const Login = () => {
       .then(res => {
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('username', `${res.data.user.firstName} ${res.data.user.lastName}`)
-        dispatch(setUser(res.data.data))
+        dispatch(setUser(res.data.data));
         navigate('/')
         window.scrollTo(0, 0)
         //console.log(res.data)
@@ -54,6 +55,20 @@ const Login = () => {
     })
   }
 
+  const fillLineEmail = () => {
+    document.getElementById('line-bar__email').classList.add('fill');
+  };
+  const unfillLineEmail = () => {
+    document.getElementById('line-bar__email').classList.remove('fill');
+  };
+
+  const fillLinePassword = () => {
+    document.getElementById('line-bar__pw').classList.add('fill');
+  };
+  const unfillLinePassword = () => {
+    document.getElementById('line-bar__pw').classList.remove('fill');
+  };
+
   return (
     <div className='login-container'>
       <div className="login-form-container">
@@ -67,8 +82,11 @@ const Login = () => {
               type="email"
               id='email'
               placeholder='Your email'
+              onFocus={fillLineEmail}
               {...register('email')}
+              onBlur={unfillLineEmail}
             />
+            <div className="line-bar" id='line-bar__email'></div>
           </div>
           <div className="login-input-container">
             <label htmlFor="password">
@@ -79,7 +97,9 @@ const Login = () => {
                 type={isShowingPassword ? "text" : 'password'}
                 id='password'
                 placeholder='Your password'
+                onFocus={fillLinePassword}
                 {...register('password')}
+                onBlur={unfillLinePassword}
               />
               {isShowingPassword ?
               (
@@ -92,6 +112,7 @@ const Login = () => {
                 ></i>
               )}
             </div>
+            <div className="line-bar" id='line-bar__pw'></div>
           </div>
           <button><h3>LOGIN</h3></button>
         </form>

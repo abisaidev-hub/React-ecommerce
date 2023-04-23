@@ -20,6 +20,7 @@ const Home = () => {
   // Redux
   const products = useSelector(state => state.products);
   const isShowing = useSelector(state => state.isShowing);
+  const showAll = useSelector(state => state.showAll);
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -38,6 +39,14 @@ const Home = () => {
     e.preventDefault();
     dispatch(filterProductsThunk(searchedValueFixed));
   };
+
+  const fillLine = () => {
+    document.getElementById('line-bar__home').classList.add('fill');
+  }
+
+  const unfillLine = () => {
+    document.getElementById('line-bar__home').classList.remove('fill');
+  }
   
   return (
     <div className="home__container">
@@ -49,13 +58,23 @@ const Home = () => {
               placeholder='Find a product...'
               onChange={e => setSearchedValue(e.target.value)}
               value={searchedValue}
+              onFocus={fillLine}
+              onBlur={unfillLine}
             />
             <button>
               <i className='bx bx-search-alt bx-sm'></i>
             </button>
           </form>
+          <div className="line-bar" id='line-bar__home'></div>
         </div>
         <div className="filter-container">
+          {showAll &&
+            <button className='filter-container__show-all' onClick={() => {
+              dispatch(getProductsThunk())
+              window.scrollTo(0, 0)}}>
+              SHOW ALL
+            </button>
+          }
           <button onClick={() => dispatch(setIsShowing(true))} className='btn-for-filter'>
             <i className='bx bx-filter-alt bx-sm' ></i>
           </button>
