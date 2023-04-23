@@ -311,7 +311,7 @@ nav{
 
 .cart-data-container h2{
   margin-bottom: 1.5rem;
-  color: rgb(18, 35, 68);
+  color: black;
 }
 
 .cart-items-container{
@@ -327,7 +327,6 @@ nav{
 }
 
 .cart-data-container ul li{
-  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.10);
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -377,7 +376,6 @@ nav{
 .cart-item-options span{
   height: 34px;
   background-color: rgb(218, 218, 218);
-  border-radius: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -388,8 +386,7 @@ nav{
 .cart-item-options button{
   height: 34px;
   width: 34px;
-  border-radius: 0.5rem;
-  background-color: rgb(18, 35, 68);
+  background-color: black;
   color: white;
   border: none;
 }
@@ -401,9 +398,8 @@ nav{
 .cart-item-delete-btn{
   height: 34px;
   width: 34px;
-  border-radius: 0.5rem;
-  background-color: rgb(18, 35, 68);
-  color: white;
+  color: black;
+  background-color: transparent;
   border: none;
 }
 
@@ -423,8 +419,7 @@ nav{
 .cart-checkout-btn{
   height: 40px;
   width: 100%;
-  border-radius: 0.5rem;
-  background-color: rgb(18, 35, 68);
+  background-color: black;
   color: white;
   border: none;
 }
@@ -444,7 +439,7 @@ nav{
 
 .cart-empty h2,
 .cart-empty i{
-  color: rgb(18, 35, 68);
+  color: black;
 }
 
 /* Products */
@@ -701,7 +696,7 @@ nav{
 
 .pd-sugested-products-ul ul li:hover{
   cursor: pointer;
-  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.10);
   transition: 0.3s;
 }
 
@@ -841,9 +836,7 @@ nav{
 }
 
 .user-data-container{
-  border-radius: 0.5rem;
   background-color: white;
-  box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.10);
   padding: 1rem;
 }
 
@@ -864,16 +857,11 @@ nav{
   justify-content: center;
 }
 
-.user-data-name-container p{
-  color: rgb(18, 35, 68);
-}
-
 .user-data-container button{
   width: 100%;
   height: 40px;
   border: none;
-  border-radius: 0.5rem;
-  background-color: rgb(18, 35, 68);
+  background-color: black;
   color: white;
 }
 
@@ -888,12 +876,11 @@ nav{
 /* Purchases */
 
 .purchases-view-container{
-  padding: 1rem 2rem;
+  padding: 1rem 0.2rem;
   padding-top: calc(8vh + 1rem);
 }
 
 .purchases-view-container h2{
-  color: rgb(18, 35, 68);
   margin-bottom: 1rem;
 }
 
@@ -910,10 +897,8 @@ nav{
 
 .pch-container{
   list-style: none;
-  border-radius: 0.5rem;
   padding: 0.75rem;
   background-color: white;
-  box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.10);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -979,17 +964,9 @@ nav{
   text-align: end;
 }
 
-.pch-total-container b{
-  color: rgb(18, 35, 68);
-}
-
 .pch-total-pchs-container{
   margin-top: 1rem;
   text-align: center;
-}
-
-.pch-total-pchs-container p{
-  color: rgb(18, 35, 68);
 }
 
 /* Footer */
@@ -1038,17 +1015,10 @@ nav{
   color: white;
 }
 
-.ft-about-container li:hover,
-.ft-our-information-container li:hover,
-.ft-product-container li:hover{
-  text-decoration: underline;
-  transition: 0.2s;
-}
-
 .ft-about-container li,
 .ft-our-information-container li,
 .ft-product-container li{
-  transition: 0.2s;
+  cursor: pointer;
 }
 
 .ft-about-container,
@@ -1113,7 +1083,7 @@ nav{
 
   .products-ul-container ul{
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    gap: 0.2rem;
   }
 
   .products-ul-container ul li{
@@ -1175,7 +1145,6 @@ nav{
   .ft-ecommerce-social-media-container ul{
     display: flex;
     margin-top: 0.4rem;
-    gap: 0.2rem;
   }
 
 }
@@ -1186,7 +1155,7 @@ nav{
 
   .products-ul-container ul{
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 0.2rem;
   }
 
   /* Product Detailed */
@@ -1202,7 +1171,7 @@ nav{
 
   .product-desc-buy{
     display: flex;
-    gap: 1rem;
+    gap: 0.2rem;
   }
 
   .pd-img-container{
@@ -1212,6 +1181,11 @@ nav{
   }
 
   /* Purchases */
+
+  .purchases-view-container{
+    padding: 1rem 2rem;
+    padding-top: calc(10vh + 1rem);
+  }
 
   .pch-ul{
     grid-template-columns: 1fr 1fr 1fr;

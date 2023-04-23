@@ -119,7 +119,7 @@ const Cart = () => {
                     </div>
                     <div>
                       <button className='cart-item-delete-btn' onClick={() => deleteProduct(item)}>
-                        <i className='bx bxs-trash'></i>
+                        <i className='bx bxs-trash bx-sm'></i>
                       </button>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ const Cart = () => {
           <div className="cart-total-pay-container">
             <p>Total: ${productsTotal()}</p>
             <button className='cart-checkout-btn' onClick={purchaseCart}>
-              <h3>Checkout</h3>
+              <h3>CHECKOUT</h3>
             </button>
           </div>
         </div>

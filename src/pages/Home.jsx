@@ -50,13 +50,13 @@ const Home = () => {
               value={searchedValue}
             />
             <button>
-              <i className='bx bx-search-alt'></i>
+              <i className='bx bx-search-alt bx-sm'></i>
             </button>
           </form>
         </div>
         <div className="filter-container">
           <button onClick={() => dispatch(setIsShowing(true))} className='btn-for-filter'>
-            <i className='bx bx-filter-alt' ></i>
+            <i className='bx bx-filter-alt bx-sm' ></i>
           </button>
           {isShowing &&
             <FilterByCategory categories={categories}/>

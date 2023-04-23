@@ -89,7 +89,7 @@ const ProductDetailed = () => {
                 <span>{productQuantity}</span>
                 <button onClick={substractQuantity}>-</button>
               </div>
-              <button className='pd-add-product-btn' onClick={() => {token ? addProduct : navigate('/login')}}>
+              <button className='pd-add-product-btn' onClick={() => {token ? addProduct() : navigate('/login')}}>
                 <h3>ADD TO CART</h3>
               </button>
             </div>

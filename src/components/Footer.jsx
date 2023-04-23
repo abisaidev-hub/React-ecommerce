@@ -32,12 +32,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="ft-about-container">
-          <h3>ABOUT</h3>
+          <h3>COMPANY</h3>
           <ul>
-            <li>SUPPORT CENTER</li>
-            <li>COSTUMER</li>
-            <li>BUGS</li>
-            <li>ABOUT US</li>
+            <li>TERMS & CONDITIONS</li>
+            <li>PRIVACY POLICY</li>
           </ul>
         </div>
         <div className="ft-product-container">

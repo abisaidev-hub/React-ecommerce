@@ -23,7 +23,7 @@ const User = () => {
         <div className="user-data-name-container">
           <p><b>{localStorage.getItem('username')}</b></p>
         </div>
-        <button onClick={logout}><h3>Logout</h3></button>
+        <button onClick={logout}><h3>LOGOUT</h3></button>
       </div>
 
       <div className="user-extra-data"></div>
