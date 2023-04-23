@@ -30,7 +30,7 @@ const FilterByCategory = ({categories}) => {
                   dispatch(setIsShowing(false))
                   window.scrollTo(0, 0)
                 }}>
-                  Show all
+                  SHOW ALL
                 </li>
               }
               {categories.map(category => (
