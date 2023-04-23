@@ -16,13 +16,13 @@ const FilterByCategory = ({categories}) => {
       <div className="filter-by-category-container">
         <div className='fbc-btn-container'>
           <button onClick={() => dispatch(setIsShowing(false))}>
-            <i className='bx bx-x bx-sm' ></i>
+            <i className='bx bx-x bx-md' ></i>
           </button>
         </div>
         <div className="fbc-options-container">
-          <h2>Filters</h2>
+          <h2>Filter by</h2>
           <div className="fbc-category-container">
-            <p><b>Category</b></p>
+            <p>CATEGORY</p>
             <ul>
               {showAll &&
                 <li onClick={() => {
@@ -39,7 +39,7 @@ const FilterByCategory = ({categories}) => {
                 dispatch(setIsShowing(false))
                 window.scrollTo(0, 0)
                 }}>
-                  {category.name}
+                  {category.name.toUpperCase()}
                 </li>
               ))}
             </ul>

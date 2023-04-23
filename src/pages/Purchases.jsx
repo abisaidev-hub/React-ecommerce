@@ -12,8 +12,9 @@ const Purchases = () => {
   const products = useSelector(state => state.products)
 
   useEffect(() => {
-    dispatch(getPurchasesThunk())
-    dispatch(getProductsThunk())
+    dispatch(getPurchasesThunk());
+    dispatch(getProductsThunk());
+    window.scrollTo(0, 0);
   }, [])
 
   //console.log(purchases)
