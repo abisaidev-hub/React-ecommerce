@@ -22,21 +22,21 @@ const Home = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(getProductsThunk())
+    dispatch(getProductsThunk());
     // Categories
     axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/categories')
     .then(res => setCategories(res.data))
-  }, [])
+  }, []);
   //console.log(products)
   //console.log(categories)
   
-  const searchedValueFixed = `${searchedValue[0]?.toUpperCase()}${searchedValue.substring(1).toLowerCase()}`
-  console.log(searchedValueFixed)
+  const searchedValueFixed = `${searchedValue[0]?.toUpperCase()}${searchedValue.substring(1).toLowerCase()}`;
+  //console.log(searchedValueFixed);
   
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(filterProductsThunk(searchedValueFixed))
-  }
+    dispatch(filterProductsThunk(searchedValueFixed));
+  };
   
   return (
     <div className="home__container">
@@ -45,17 +45,18 @@ const Home = () => {
           <form onSubmit={submitForm}>
             <input
               type="text"
-              placeholder='Enter a product name'
+              placeholder='Find a product...'
               onChange={e => setSearchedValue(e.target.value)}
               value={searchedValue}
             />
-            <button>Search</button>
+            <button>
+              <i className='bx bx-search-alt'></i>
+            </button>
           </form>
         </div>
         <div className="filter-container">
           <button onClick={() => dispatch(setIsShowing(true))} className='btn-for-filter'>
             <i className='bx bx-filter-alt' ></i>
-            Filter
           </button>
           {isShowing &&
             <FilterByCategory categories={categories}/>

@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 const NavBar = () => {
 
   const navigate = useNavigate();
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token');
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,13 +17,24 @@ const NavBar = () => {
 
   const isCartWithProducts = useSelector(state => state.isCartWithProducts)
 
+  let navBar = document.querySelector('nav');
+  window.addEventListener('scroll', () =>{
+
+      if(window.scrollY ){
+          navBar?.classList.add('nav-scroll')
+      }else{
+          navBar?.classList.remove('nav-scroll')
+      }
+
+  });
+
   return (
     <nav>
       <div className="nav__container">
         <div className="nav__icon" onClick={() => {navigate('/')
           window.scrollTo(0, 0)
           ;}}>
-          <p>{"DigiShop"}</p>
+          <p>{"DIGISHOP"}</p>
         </div>
         <div className="nav__options">
           <ul>

@@ -6,6 +6,8 @@ import { addProductToCartThunk } from '../store/slices/cart.slice';
 
 const ProductDetailed = () => {
 
+  const token = localStorage.getItem('token');
+
   // React
   const [productData, setProductData] = useState({});
   const [sugestedProducts, setSugestedProducts] = useState([]);
@@ -60,7 +62,7 @@ const ProductDetailed = () => {
       <div className="pd-btn-container">
         <button onClick={() => navigate('/') /*-1*/}>
           <i className='bx bxs-chevron-left bx-sm'></i>
-          <p>Back</p>
+          <p>BACK</p>
         </button>
       </div>
       <div className="pd-category-container" // onClick={() => {
@@ -87,8 +89,8 @@ const ProductDetailed = () => {
                 <span>{productQuantity}</span>
                 <button onClick={substractQuantity}>-</button>
               </div>
-              <button className='pd-add-product-btn' onClick={addProduct}>
-                <h3>Add to cart</h3>
+              <button className='pd-add-product-btn' onClick={() => {token ? addProduct : navigate('/login')}}>
+                <h3>ADD TO CART</h3>
               </button>
             </div>
           </div>

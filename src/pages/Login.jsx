@@ -93,7 +93,7 @@ const Login = () => {
               )}
             </div>
           </div>
-          <button><h3>Login</h3></button>
+          <button><h3>LOGIN</h3></button>
         </form>
       </div>
       <div className="login-test-container">
