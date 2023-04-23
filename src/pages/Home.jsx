@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FilterByCategory from '../components/FilterByCategory';
 import { getProductsThunk, filterProductsThunk } from '../store/slices/products.slice';
 import { setIsShowing } from '../store/slices/isShowing.slice'
+import { getCartThunk } from '../store/slices/cart.slice';
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {

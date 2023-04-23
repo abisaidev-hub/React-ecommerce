@@ -101,7 +101,7 @@ const Purchases = () => {
         </ul>
       </div>
       <div className="pch-total-pchs-container">
-        <p><b>Total purchased</b>: ${purchasedInTotal()}</p>
+        <p><b>TOTAL PURCHASED</b>: ${purchasedInTotal()}</p>
       </div>
     </div>
   );

@@ -69,7 +69,7 @@ const ProductDetailed = () => {
       // navigate('/')
       // dispatch(filterByCategoryThunk(productData?.category?.id)) }}
       >
-        <p>{productData?.category?.name}</p>
+        <p>{productData?.category?.name?.toUpperCase()}</p>
       </div>
       <div className="product-desc-buy">
         <div className="product-container">

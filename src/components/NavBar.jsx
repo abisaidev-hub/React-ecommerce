@@ -12,10 +12,10 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCartThunk())
-  }, [])
+    dispatch(getCartThunk());
+  }, []);
 
-  const isCartWithProducts = useSelector(state => state.isCartWithProducts)
+  const isCartWithProducts = useSelector(state => state.isCartWithProducts);
 
   let navBar = document.querySelector('nav');
   window.addEventListener('scroll', () =>{

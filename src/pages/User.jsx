@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const User = () => {
 
   const navigate = useNavigate();
-  const user = useSelector(state => state.user)
+  const user = useSelector(state => state.user);
 
   const logout = () => {
     localStorage.removeItem('token')
