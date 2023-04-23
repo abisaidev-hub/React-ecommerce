@@ -772,6 +772,28 @@ nav{
 
 /* Login */
 
+.pop-up__login-failed{
+  position: fixed;
+  z-index: 2;
+  top: -50px;
+  left: calc(50% - 125px);
+  padding: 0.5rem;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.pop-up__login-failed p{
+  color: white;
+}
+
+.active__login-failed{
+  transform: translate(0, 60px);
+}
+
 .login-container{
   display: flex;
   flex-direction: column;

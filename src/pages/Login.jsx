@@ -28,23 +28,27 @@ const Login = () => {
 
     axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/users/login', obj)
       .then(res => {
-        localStorage.setItem('token', res.data.token)
-        localStorage.setItem('username', `${res.data.user.firstName} ${res.data.user.lastName}`)
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('username', `${res.data.user.firstName} ${res.data.user.lastName}`);
         dispatch(setUser(res.data.data));
-        navigate('/')
-        window.scrollTo(0, 0)
+        navigate('/');
+        window.scrollTo(0, 0);
         //console.log(res.data)
       })
       .catch(err => {
         if(err){
-          alert('Invalid username and/or password')
-          console.error(err)
+          //alert('Invalid username and/or password');
+          //console.error(err);
+          document.getElementById('login-failed').classList.add('active__login-failed');
+          setTimeout(() => {
+            document.getElementById('login-failed').classList.remove('active__login-failed');
+          }, 3000);
         }
-      })
-    reset({
+      });
+    /*reset({
       email: '',
       password: ''
-    })
+    });*/
   }
 
   const useTestCredentials = () => {
@@ -71,6 +75,9 @@ const Login = () => {
 
   return (
     <div className='login-container'>
+      <div className="pop-up__login-failed" id='login-failed'>
+        <p>Invalid username or password</p>
+      </div>
       <div className="login-form-container">
         <h2>Login</h2>
         <form onSubmit={handleSubmit(userFormSubmit)}>
