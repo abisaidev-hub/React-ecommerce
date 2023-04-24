@@ -49,6 +49,10 @@ const Home = () => {
   const unfillLine = () => {
     document.getElementById('line-bar__home').classList.remove('fill');
   }
+
+  const filterNav = () => {
+    dispatch(setIsShowing(true));
+  }
   
   return (
     <div className="home__container">
@@ -77,7 +81,7 @@ const Home = () => {
               SHOW ALL
             </button>
           }
-          <button onClick={() => dispatch(setIsShowing(true))} className='btn-for-filter'>
+          <button onClick={filterNav} className='btn-for-filter'>
             <i className='bx bx-filter-alt bx-sm' ></i>
           </button>
           {isShowing &&

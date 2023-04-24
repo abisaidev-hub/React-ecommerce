@@ -92,6 +92,7 @@ const Login = () => {
               onFocus={fillLineEmail}
               {...register('email')}
               onBlur={unfillLineEmail}
+              required
             />
             <div className="line-bar" id='line-bar__email'></div>
           </div>
@@ -107,6 +108,7 @@ const Login = () => {
                 onFocus={fillLinePassword}
                 {...register('password')}
                 onBlur={unfillLinePassword}
+                required
               />
               {isShowingPassword ?
               (

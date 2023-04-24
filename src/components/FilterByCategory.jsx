@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsShowing } from '../store/slices/isShowing.slice';
 import { filterByCategoryThunk, getProductsThunk } from '../store/slices/products.slice';
@@ -10,12 +11,26 @@ const FilterByCategory = ({categories}) => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById('filter-nav')?.classList.add('filter-by-category-container__appear');
+      document.getElementById('filter-overlay')?.classList.add('filter-by-category-overlay__appear');
+    }, 1)
+  }, []);
+
+  const closeFilter = () => {
+    document.getElementById('filter-nav')?.classList.remove('filter-by-category-container__appear');
+    document.getElementById('filter-overlay')?.classList.remove('filter-by-category-overlay__appear');
+    setTimeout(() => {
+      dispatch(setIsShowing(false));
+    }, 500) 
+  }
+
   return (
-    <div className='filter-by-category-overlay'>
-      <div className="filter-by-category-space"></div>
-      <div className="filter-by-category-container">
+    <div className='filter-by-category-overlay' id='filter-overlay'>
+      <div className="filter-by-category-container" id='filter-nav'>
         <div className='fbc-btn-container'>
-          <button onClick={() => dispatch(setIsShowing(false))}>
+          <button onClick={closeFilter}>
             <i className='bx bx-x bx-md' ></i>
           </button>
         </div>
