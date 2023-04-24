@@ -96,8 +96,11 @@ const ProductDetailed = () => {
           </div>
         </div>
         <div className="pd-description-container">
-          <h3>About this product</h3>
-          <p>{productData?.description}</p>
+          <div className="pd-description-container__description">
+            <h3>About this product</h3>
+            <p>{productData?.description}</p>
+          </div>
+          <div className="line-bar"></div>
         </div>
       </div>
       <div className="pd-sugested-products-container">
@@ -126,6 +129,7 @@ const ProductDetailed = () => {
                       <i className='bx bxs-cart-add bx-xs' ></i>
                     </button>
                   </div>*/}
+                  <div className="line-bar"></div>
                 </div>
               </li>
             ))}

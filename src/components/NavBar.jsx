@@ -32,7 +32,7 @@ const NavBar = () => {
     <nav>
       <div className="nav__container">
         <div className="nav__icon" onClick={() => {navigate('/')}}>
-          <p>{"DIGISHOP"}</p>
+          <p>{"FXSHOP"}</p>
         </div>
         <div className="nav__options">
           <ul>
@@ -48,7 +48,8 @@ const NavBar = () => {
                   <i className='bx bxs-cart bx-sm' ></i>
                 ) : (
                   <i className='bx bx-cart bx-sm' ></i>
-                )}
+                )
+              }
             </li>
           </ul>
         </div>

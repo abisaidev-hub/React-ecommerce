@@ -117,6 +117,7 @@ const Home = () => {
                       <i className='bx bxs-cart-add bx-xs' ></i>
                     </button>
                   </div>*/}
+                  <div className="line-bar"></div>
                 </div>
               </div>
             </li>

@@ -537,8 +537,11 @@ nav{
 
 .product-card:hover{
   cursor: pointer;
-  box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.10);
   transition: 0.3s;
+}
+
+.product-card:hover .line-bar{
+  background-position: 0 0;
 }
 
 .product-image{
@@ -560,10 +563,10 @@ nav{
 .product-title{
   margin-bottom: 1rem;
   font-size: 0.9em;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .product-description{
-  padding: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -573,11 +576,20 @@ nav{
 
 .product-price-buy{
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.product-price{
+  padding: 0 1rem;
 }
 
 .product-price p{
   font-size: 0.8em;
+}
+
+.product-price-buy .line-bar{
+  background-color: white;
 }
 
 .product-button{
@@ -671,6 +683,10 @@ nav{
   font-size: 1.4rem;
 }
 
+.product-container .product-price{
+  padding: 0;
+}
+
 .pd-img-container{
   display: flex;
   justify-content: center;
@@ -684,19 +700,29 @@ nav{
 
 .pd-line{
   height: 1px;
-  width: 95%;
+  width: 90%;
   background-color: rgb(194, 194, 194);
   margin: 0.5rem 0;
 }
 
 .pd-description-container{
-  padding: 1rem;
   background-color: white;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .pd-description-container h3{
   margin-bottom: 0.5rem;
+}
+
+.pd-description-container__description{
+  padding: 1rem;
+}
+
+.pd-description-container .line-bar{
+  background-color: black;
 }
 
 .pd-product-button{
@@ -760,9 +786,9 @@ nav{
 }
 
 .pd-sugested-products-ul ul li{
-  outline: 1px solid whitesmoke;
+  outline: 1px solid rgb(210, 210, 210);
   list-style: none;
-  padding: 1rem;
+  padding: 1rem 0 0 0;
   width: 190px;
   display: flex;
   flex-direction: column;
@@ -773,12 +799,16 @@ nav{
 
 .pd-sugested-products-ul ul li:hover{
   cursor: pointer;
-  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.10);
   transition: 0.3s;
+}
+
+.pd-sugested-products-ul ul li:hover .line-bar{
+  background-position: 0 0;
 }
 
 .pd-sugested-product-img-txt{
   width: 100%;
+  padding: 0 1rem;
 }
 
 .pd-sugested-product-img{
@@ -796,6 +826,7 @@ nav{
 .pd-sugested-products-ul ul li .product-price-buy{
   margin-top: 1rem;
   width: 100%;
+  gap: 1rem;
 }
 
 /* Login */
@@ -809,7 +840,7 @@ nav{
   width: 250px;
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: #ED4337;
   text-align: center;
   transition: 0.5s;
 }
