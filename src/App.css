@@ -226,7 +226,7 @@ nav{
   bottom: 0;
   display: flex;
   justify-content: space-between;
-  opacity: 1;
+  opacity: 0;
   transition: 0.5s;
 }
 
@@ -241,12 +241,12 @@ nav{
   height: 100%;
   max-width: 350px;
   position: fixed;
-  right: -80%;
+  right: -350px;
   transition: 0.5s;
 }
 
 .filter-by-category-container__appear{
-  transform: translate(-100%, 0);
+  transform: translate(-350px, 0);
   transition: 0.5s;
 }
 
@@ -302,6 +302,7 @@ nav{
 
 .fbc-category-container ul li:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
 
 /* > Cart */
