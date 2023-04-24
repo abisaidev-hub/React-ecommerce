@@ -3,13 +3,16 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPurchasesThunk } from '../store/slices/purchases.slice';
 import { getProductsThunk } from '../store/slices/products.slice';
+import { useNavigate } from 'react-router-dom';
 
 const Purchases = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   
-  const purchases = useSelector(state => state.purchases)
-  const products = useSelector(state => state.products)
+  const purchases = useSelector(state => state.purchases);
+  const isPurchases = useSelector(state => state.isPurchases);
+  const products = useSelector(state => state.products);
 
   useEffect(() => {
     dispatch(getPurchasesThunk());
@@ -102,7 +105,21 @@ const Purchases = () => {
         </ul>
       </div>
       <div className="pch-total-pchs-container">
-        <p><b>TOTAL PURCHASED</b>: ${purchasedInTotal()}</p>
+        {isPurchases ?
+          (
+            <div>
+              <p><b>TOTAL PURCHASED</b>: ${purchasedInTotal()}</p>
+            </div>
+          ) : (
+            <div className="pch-total-pchs-container__no-purchase">
+            <p><b>YOU HAVE NOT PURCHASED YET</b></p>
+            <button onClick={() => navigate('/')}>
+              SEE PRODUCTS
+              <div className="line-bar"></div>  
+            </button>
+          </div>
+          )
+        }
       </div>
     </div>
   );

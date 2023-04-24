@@ -926,7 +926,7 @@ nav{
 }
 
 .signup__form-container button:focus{
-  outline: 1px dashed black;
+  outline: 1px dotted black;
 }
 
 .signup__login{
@@ -1068,7 +1068,7 @@ nav{
 }
 
 .login-form-container button:focus{
-  outline: none;
+  outline: 1px dotted black;
 }
 
 .login-input-container{
@@ -1197,13 +1197,14 @@ nav{
 .purchases-view-container{
   padding: 1rem 0.2rem;
   padding-top: calc(10vh + 1rem);
+  min-height: 90vh;
+  text-align: center;
 }
 
 .purchases-view-container h2{
   margin-bottom: 1rem;
   color: black;
   padding: 0.2rem 0.4rem;
-  width: fit-content;
 }
 
 .pch-ul-container{
@@ -1291,6 +1292,34 @@ nav{
 .pch-total-pchs-container{
   margin-top: 1rem;
   text-align: center;
+}
+
+.pch-total-pchs-container__no-purchase{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pch-total-pchs-container__no-purchase button{
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: black;
+}
+
+.pch-total-pchs-container__no-purchase button:hover{
+  cursor: pointer;
+}
+
+.pch-total-pchs-container__no-purchase .line-bar{
+  background-color: transparent;
+  height: 2px;
+}
+
+.pch-total-pchs-container__no-purchase button:hover .line-bar{
+  background-position: 0 0;
 }
 
 /* Footer */
@@ -1438,7 +1467,6 @@ nav{
 
   .pch-ul-container{
     display: flex;
-    gap: 2rem;
   }
 
   .pch-total-container{

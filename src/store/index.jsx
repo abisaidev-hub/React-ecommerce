@@ -10,6 +10,7 @@ import isCartWithProductsSlice from './slices/isCartWithProducts.slice';
 import purchasesSlice from './slices/purchases.slice';
 import isShowingPasswordSlice from './slices/isShowingPassword.slice';
 import userCreatedSlice  from './slices/userCreated';
+import isPurchasesSlice from './slices/isPurchases';
 
 export default configureStore({
     reducer: {
@@ -24,5 +25,6 @@ export default configureStore({
       purchases: purchasesSlice,
       isShowingPassword: isShowingPasswordSlice,
       userCreated: userCreatedSlice,
+      isPurchases: isPurchasesSlice,
     }
 })
