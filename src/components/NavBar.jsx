@@ -31,15 +31,18 @@ const NavBar = () => {
   return (
     <nav>
       <div className="nav__container">
-        <div className="nav__icon" onClick={() => {navigate('/')}}>
+        <div className="nav__icon" onClick={() => {
+          navigate('/')
+          window.scrollTo(0, 0)}  
+          }>
           <p>{"FXSHOP"}</p>
         </div>
         <div className="nav__options">
           <ul>
-            <li onClick={() => {navigate('/user')}}>
+            <li onClick={() => token ? navigate('/user') : navigate('/login')}>
               <i className='bx bxs-user bx-sm'></i>
             </li>
-            <li onClick={() => {navigate('/purchases')}}>
+            <li onClick={() => token ? navigate('/purchases') : navigate('/login')}>
               <i className='bx bxs-basket bx-sm' ></i>
             </li>
             <li onClick={() => token ? dispatch(setIsShowingCart(true)) : navigate('/login')}>

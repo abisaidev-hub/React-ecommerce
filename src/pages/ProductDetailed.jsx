@@ -65,11 +65,14 @@ const ProductDetailed = () => {
           <p>BACK</p>
         </button>
       </div>
-      <div className="pd-category-container" // onClick={() => {
-      // navigate('/')
-      // dispatch(filterByCategoryThunk(productData?.category?.id)) }}
-      >
-        <p>{productData?.category?.name?.toUpperCase()}</p>
+      <div className="pd-category-container">
+        <div className='pd-category-container__category'>
+          <p>{productData?.category?.name?.toUpperCase()}</p>
+        </div>
+        <p>•</p>
+        <div className="pd-category-container__brand">
+          <p>{productData?.brand?.toUpperCase()}</p>
+        </div>
       </div>
       <div className="product-desc-buy">
         <div className="product-container">

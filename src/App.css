@@ -649,15 +649,27 @@ nav{
 }
 
 .pd-category-container{
-  margin: 0.5rem 0 0.2rem 0;
-  background-color: black;
+  display: flex;
   width: fit-content;
-  padding: 0.2em 0.4rem;
+  align-items: center;
+  gap: 0.1rem;
 }
 
 .pd-category-container p{
-  color: white;
   font-size: 0.9em;
+}
+
+.pd-category-container__category,
+.pd-category-container__brand{
+  width: fit-content;
+  padding: 0.2em 0.4rem;
+  margin: 0.5rem 0 0.2rem 0;
+  background-color: black;
+}
+
+.pd-category-container__category p,
+.pd-category-container__brand p{
+  color: white;
 }
 
 .product-container{
