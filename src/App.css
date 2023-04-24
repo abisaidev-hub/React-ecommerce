@@ -772,7 +772,7 @@ nav{
 }
 
 .pd-sugested-products-container{
-  background-color: white;
+  background-color: transparent;
   padding: 1rem;
 }
 
@@ -781,12 +781,11 @@ nav{
   gap: 0.2rem;
   grid-auto-flow: column;
   overflow-x: auto;
-  padding: 1rem 1rem;
+  padding: 1rem 0;
   max-width: fit-content;
 }
 
 .pd-sugested-products-ul ul li{
-  outline: 1px solid rgb(210, 210, 210);
   list-style: none;
   padding: 1rem 0 0 0;
   width: 190px;
@@ -795,6 +794,7 @@ nav{
   align-items: center;
   justify-content: space-between;
   transition: 0.3s;
+  background-color: white;
 }
 
 .pd-sugested-products-ul ul li:hover{
@@ -829,6 +829,123 @@ nav{
   gap: 1rem;
 }
 
+/* Signup */
+
+.signup__container{
+  padding-top: calc(10vh + 2rem);
+  min-height: calc(90vh);
+  padding-bottom: 3rem;
+}
+
+.signup__form-container{
+  padding: 1rem 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.signup__form-container form{
+  display: flex;
+  flex-direction: column;
+}
+
+.signup__form-container form label{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  color: rgb(100, 100, 100);
+}
+
+.signup__form-container form input{
+  width: 100%;
+  border: none;
+  background-color: #f3f3f3;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.signup__form-container form input:focus{
+  outline: none;
+}
+
+.signup__form-container form input:focus ~ .line-bar{
+  background-position: 0 0;
+} 
+
+.signup__input-container{
+  margin-bottom: 1.75rem;
+}
+
+.signup__input-pw{
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+}
+
+.signup__input-pw i{
+  color: black;
+  background-color: #f3f3f3;
+  padding: 0 0.5rem;
+}
+
+.signup__input-pw i:hover{
+  cursor: pointer;
+}
+
+.signup__form-container button{
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: black;
+  color: white;
+  margin-top: 0.2rem;
+}
+
+.signup__form-container button:hover{
+  cursor: pointer;
+}
+
+.signup__form-container button:focus{
+  outline: 1px dashed black;
+}
+
+.signup__login{
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.signup__login button{
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.signup__login button:hover{
+  cursor: pointer;
+}
+
+.signup__login button:hover .line-bar{
+  background-position: 0 0;
+}
+
+.signup__login .line-bar{
+  background-color: transparent;
+  height: 2px;
+}
+
 /* Login */
 
 .pop-up__login-failed{
@@ -853,20 +970,41 @@ nav{
   transform: translate(0, 60px);
 }
 
-.login-container{
+.pop-up__user-created{
+  position: fixed;
+  z-index: 2;
+  top: 10px;
+  left: calc(50% - 125px);
+  padding: 0.5rem;
+  width: 250px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
-  padding: 0.2rem;
+  background-color: green;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.pop-up__user-created p{
+  color: white;
+}
+
+.login-container{
   padding-top: calc(10vh + 2rem);
-  max-width: 400px;
-  margin: 0 auto;
+  min-height: calc(90vh);
+  padding-bottom: 3rem;
 }
 
 .login-test-container{
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto 0 auto;
+  max-width: 400px;
+}
+
+.login-test-container p{
+  font-size: 0.75em;
 }
 
 .login-test-credentials-container{
@@ -875,18 +1013,18 @@ nav{
   margin-top: 0.5rem;
 }
 
-.login-test-credentials-container button{
-  border: none;
-  background-color: black;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  color: white;
+.login-test-credentials-container p{
+  font-size: 1em;
 }
 
 .login-form-container{
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin: 0 auto;
+  max-width: 400px;
 }
 
 .login-form-container form{
@@ -897,11 +1035,6 @@ nav{
 
 .login-form-container .line-bar{
   background-color: rgb(194, 194, 194);
-}
-
-.login-form-container h2{
-  margin-bottom: 2rem;
-  color: black;
 }
 
 .login-form-container button{
@@ -932,9 +1065,6 @@ nav{
   width: fit-content;
   align-items: center;
   justify-content: center;
-}
-
-.login-input-container label{
   font-size: 0.75em;
   margin: 0 0 0.5rem 0;
   font-weight: bold;
@@ -970,8 +1100,33 @@ nav{
   cursor: pointer;
 }
 
-.login-extra-data{
-  height: 20vh;
+.login__signup{
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.login__signup button{
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.login__signup button:hover{
+  cursor: pointer;
+}
+
+.login__signup button:hover .line-bar{
+  background-position: 0 0;
+}
+
+.login__signup .line-bar{
+  background-color: transparent;
+  height: 2px;
 }
 
 /* User */
@@ -1337,12 +1492,6 @@ nav{
 
   .pch-ul-container{
     flex-direction: row;
-  }
-
-  /* Login */
-
-  .login-container{
-    padding-top: calc(10vh + 7rem);
   }
 
 }

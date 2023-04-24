@@ -1,21 +1,19 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/slices/user.slice';
 import { setIsShowingPassword } from '../store/slices/isShowingPassword.slice';
-import { useEffect } from 'react';
-import { getCartThunk } from '../store/slices/cart.slice';
 
 const Login = () => {
 
   const [ isSelected, setIsSelected ] = useState(false);
 
+  const dispatch = useDispatch();
   const navigate = useNavigate('/')
   const { register, reset, handleSubmit } = useForm();
 
-  const dispatch = useDispatch();
 
   const isShowingPassword = useSelector(state => state.isShowingPassword);
 
@@ -79,6 +77,9 @@ const Login = () => {
       <div className="pop-up__login-failed" id='login-failed'>
         <p>Invalid username or password</p>
       </div>
+      <div className="pop-up__user-created" id='user-created'>
+        <p>User created successfully!</p>
+      </div>
       <div className="login-form-container">
         <h2>Login</h2>
         <form onSubmit={handleSubmit(userFormSubmit)}>
@@ -120,24 +121,27 @@ const Login = () => {
                 <i className='bx bx-show bx-sm'
                   onClick={() => dispatch(setIsShowingPassword(!isShowingPassword))}
                 ></i>
-              )}
+              )};
             </div>
             <div className="line-bar" id='line-bar__pw'></div>
           </div>
           <button><h3>LOGIN</h3></button>
         </form>
       </div>
+      <div className="login__signup">
+        <button onClick={() => navigate('/signup')}>
+          I WANT TO CREATE AN ACCOUNT
+          <div className="line-bar"></div>
+        </button>
+      </div>
       <div className="login-test-container">
-        <p><b>Don't have an account? No worries! You can use the following credentials {':)'}</b></p>
+        <p><b>TEST DATA {':)'}</b></p>
         <div className="login-test-credentials-container">
           <p>abisai@test.com</p>
           <p>test1234</p>
           {/*<button onClick={useTestCredentials}>Use credentials</button>*/}
         </div>
       </div>
-
-      <div className="login-extra-data"></div>
-      
     </div>
   );
 };

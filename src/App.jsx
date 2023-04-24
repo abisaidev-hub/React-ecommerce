@@ -1,6 +1,6 @@
 import './App.css'
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import { Home, Login, ProductDetailed, Purchases, User } from './pages/index'
+import { Home, Login, ProductDetailed, Purchases, User, Signup } from './pages/index'
 import { Cart, Footer, Loader, NavBar, ProtectedRoutes } from './components'
 import { useSelector } from 'react-redux'
 
@@ -17,6 +17,7 @@ function App() {
         {isShowingCart && <Cart />}
         <Routes>
           <Route path='/login' element={<Login />}/>
+          <Route path='/signup' element={<Signup />}/>
           <Route path='/' element={<Home />}/>
           <Route path='/product/:productId' element={<ProductDetailed />}/>
 
