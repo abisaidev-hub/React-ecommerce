@@ -226,7 +226,7 @@ nav{
   bottom: 0;
   display: flex;
   justify-content: space-between;
-  opacity: 0;
+  opacity: 1;
   transition: 0.5s;
 }
 

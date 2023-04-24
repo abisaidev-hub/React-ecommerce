@@ -14,13 +14,13 @@ const FilterByCategory = ({categories}) => {
   useEffect(() => {
     setTimeout(() => {
       document.getElementById('filter-nav')?.classList.add('filter-by-category-container__appear');
-      document.getElementById('filter-overlay')?.classList.add('filter-by-category-overlay__appear');
+      //document.getElementById('filter-overlay')?.classList.add('filter-by-category-overlay__appear');
     }, 1)
   }, []);
 
   const closeFilter = () => {
     document.getElementById('filter-nav')?.classList.remove('filter-by-category-container__appear');
-    document.getElementById('filter-overlay')?.classList.remove('filter-by-category-overlay__appear');
+    //document.getElementById('filter-overlay')?.classList.remove('filter-by-category-overlay__appear');
     setTimeout(() => {
       dispatch(setIsShowing(false));
     }, 500) 
