@@ -16,7 +16,11 @@ const Cart = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(getCartThunk())
+    dispatch(getCartThunk());
+    setTimeout(() => {
+      document.getElementById('cart-overlay')?.classList.add('cart-overlay__appear');
+      document.getElementById('cart-container')?.classList.add('cart-container__appear');
+    }, 1);
   }, [])
   //console.log(cart)
 
@@ -80,12 +84,19 @@ const Cart = () => {
     }
   }
 
+  const closeCart = () => {
+    document.getElementById('cart-overlay')?.classList.remove('cart-overlay__appear');
+    document.getElementById('cart-container')?.classList.remove('cart-container__appear');
+    setTimeout(() => {
+      dispatch(setIsShowingCart(false));
+    }, 500);
+  }
+
   return (
-    <div className='cart-overlay'>
-      <div className="cart-overlay-space"></div>
-      <div className="cart-container">
+    <div className='cart-overlay' id='cart-overlay'>
+      <div className="cart-container" id='cart-container'>
         <div className='cart-close-btn'>
-          <button onClick={() => dispatch(setIsShowingCart(false))}>
+          <button onClick={closeCart}>
             <i className='bx bx-x bx-sm' ></i>
           </button>
         </div>

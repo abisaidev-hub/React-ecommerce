@@ -78,7 +78,7 @@ const Home = () => {
             <button className='filter-container__show-all' onClick={(e) => {
               dispatch(getProductsThunk())
               window.scrollTo(0, 0)}}>
-              SHOW ALL
+              SHOW ALL PRODUCTS
             </button>
           }
           <button onClick={filterNav} className='btn-for-filter'>

@@ -316,11 +316,13 @@ nav{
   bottom: 0;
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition: 0.5s;
 }
 
-.cart-overlay-space{
-  width: 20%;
-  height: 100%;
+.cart-overlay__appear{
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .cart-container{
@@ -328,6 +330,14 @@ nav{
   width: 80%;
   height: 100%;
   max-width: 350px;
+  position: fixed;
+  right: -350px;
+  transition: 0.5s;
+}
+
+.cart-container__appear{
+  transform: translate(-350px, 0);
+  transition: 0.5s;
 }
 
 .cart-close-btn{
