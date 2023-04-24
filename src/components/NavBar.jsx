@@ -36,11 +36,10 @@ const NavBar = () => {
         </div>
         <div className="nav__options">
           <ul>
-            <li onClick={() => {token ? navigate('/user') : navigate('/login')}}>
+            <li onClick={() => {navigate('/user')}}>
               <i className='bx bxs-user bx-sm'></i>
             </li>
-            <li onClick={() => {navigate('/purchases')
-              window.scrollTo(0, 0);}}>
+            <li onClick={() => {navigate('/purchases')}}>
               <i className='bx bxs-basket bx-sm' ></i>
             </li>
             <li onClick={() => token ? dispatch(setIsShowingCart(true)) : navigate('/login')}>

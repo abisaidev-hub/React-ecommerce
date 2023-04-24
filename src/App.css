@@ -35,6 +35,13 @@ body{
   justify-content: center;
   align-items: center;
   z-index: 100;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.loader-overlay__appear{
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .loader {

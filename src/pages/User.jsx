@@ -7,6 +7,10 @@ import { useEffect } from 'react';
 
 const User = () => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector(state => state.user);
@@ -17,10 +21,6 @@ const User = () => {
     dispatch(setIsCartWithProducts(false));
     navigate('/');
   }
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [])
 
   return (
     <div className='user-view-container'>

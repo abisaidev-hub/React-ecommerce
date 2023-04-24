@@ -23,7 +23,12 @@ export const getCartThunk = () => (dispatch) => {
           dispatch(setIsCartWithProducts(true))
         })
         .catch(() => dispatch(setIsCartWithProducts(false)))
-        .finally(() => dispatch(setIsLoading(false)));
+        .finally(() => {
+          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          setTimeout(() => {
+            dispatch(setIsLoading(false))
+          }, 500)
+        });
 }
 
 export const addProductToCartThunk = (productToAdd) => (dispatch) => {

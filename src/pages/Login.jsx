@@ -21,6 +21,7 @@ const Login = () => {
 
   useEffect(() => {
     dispatch(setIsShowingPassword(false))
+    window.scrollTo(0, 0);
   }, [])
 
   const userFormSubmit = (obj) => {

@@ -19,7 +19,10 @@ export const getProductsThunk = () => (dispatch) => {
     return axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/products')
         .then((res) => dispatch(setProducts(res.data)))
         .finally(() => {
-          dispatch(setIsLoading(false))
+          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          setTimeout(() => {
+            dispatch(setIsLoading(false))
+          }, 500)
           dispatch(setShowAll(false))
         });
 }
