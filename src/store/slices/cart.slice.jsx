@@ -27,7 +27,7 @@ export const getCartThunk = () => (dispatch) => {
           document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
           setTimeout(() => {
             dispatch(setIsLoading(false))
-          }, 500)
+          }, 500);
         });
 }
 
@@ -36,7 +36,10 @@ export const addProductToCartThunk = (productToAdd) => (dispatch) => {
     return axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/cart', productToAdd, getConfig())
         .then(() => dispatch(getCartThunk()))
         .finally(() => {
-          dispatch(setIsLoading(false))
+          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          setTimeout(() => {
+            dispatch(setIsLoading(false))
+          }, 500);
         });
 }
 
@@ -44,14 +47,24 @@ export const updateProductInCartThunk = (productUpdated) => (dispatch) => {
     dispatch(setIsLoading(true));
     return axios.put(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${productUpdated.id}`, productUpdated.newQuantity, getConfig())
         .then(() => dispatch(getCartThunk()))
-        .finally(() => dispatch(setIsLoading(false)));
+        .finally(() => {
+          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          setTimeout(() => {
+            dispatch(setIsLoading(false))
+          }, 500);
+        });
 }
 
 export const deleteProductInCart = (token) => (dispatch) => {
     dispatch(setIsLoading(true));
     return axios.delete(`https://e-commerce-api-v2.academlo.tech/api/v1/cart/${token}`, getConfig())
         .then(() => dispatch(getCartThunk()))
-        .finally(() => dispatch(setIsLoading(false)));
+        .finally(() => {
+          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          setTimeout(() => {
+            dispatch(setIsLoading(false))
+          }, 500);
+        });
 }
 
 export const purchaseCartThunk = () => (dispatch) => {
@@ -59,7 +72,10 @@ export const purchaseCartThunk = () => (dispatch) => {
     return axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/purchases', {},getConfig())
         .then(() => dispatch(setCart([])))
         .finally(() => {
-          dispatch(setIsLoading(false))
+          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          setTimeout(() => {
+            dispatch(setIsLoading(false))
+          }, 500);
           dispatch(setIsCartWithProducts(false))
         });
 }

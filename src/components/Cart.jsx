@@ -54,9 +54,13 @@ const Cart = () => {
   }
 
   const purchaseCart = () => {
-    dispatch(purchaseCartThunk())
-    dispatch(setIsShowingCart(false))
-    navigate('/purchases')
+    document.getElementById('cart-overlay')?.classList.remove('cart-overlay__appear');
+    document.getElementById('cart-container')?.classList.remove('cart-container__appear');
+    setTimeout(() => {
+      dispatch(setIsShowingCart(false));
+    }, 500);
+    dispatch(purchaseCartThunk());
+    navigate('/purchases');
     window.scrollTo(0, 0);
   }
 
