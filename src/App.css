@@ -1150,8 +1150,9 @@ nav{
 /* User */
 
 .user-view-container{
-  padding: 1rem;
-  padding-top: calc(10vh + 2rem);
+  padding: 1rem 0.2rem;
+  padding-top: calc(10vh + 1rem);
+  min-height: 90vh;
 }
 
 .user-data-container{
@@ -1198,11 +1199,9 @@ nav{
   padding: 1rem 0.2rem;
   padding-top: calc(10vh + 1rem);
   min-height: 90vh;
-  text-align: center;
 }
 
 .purchases-view-container h2{
-  margin-bottom: 1rem;
   color: black;
   padding: 0.2rem 0.4rem;
 }
@@ -1213,6 +1212,7 @@ nav{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .pch-ul{
@@ -1367,6 +1367,7 @@ nav{
 
 .footer-container h3{
   color: white;
+  font-size: 0.9em;
 }
 
 .ft-about-container li,
@@ -1395,7 +1396,7 @@ nav{
 .ft-about-container li,
 .ft-our-information-container li,
 .ft-product-container li{
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .ft-ecommerce-social-media-container ul{
@@ -1534,10 +1535,6 @@ nav{
   .purchases-view-container{
     padding: 1rem 2rem;
     padding-top: calc(10vh + 1rem);
-  }
-
-  .pch-ul-container{
-    flex-direction: row;
   }
 
 }

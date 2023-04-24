@@ -25,6 +25,7 @@ export const getPurchasesThunk = () => (dispatch) => {
             dispatch(setIsPurchases(true))
           }
         })
+        .catch(() => dispatch(setIsPurchases(false)))
         .finally(() => {
           document.getElementById('loader-overlay')?.classList.remove('loader-overlay__appear');
           setTimeout(() => {

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setIsCartWithProducts } from '../store/slices/isCartWithProducts.slice';
 import { useEffect } from 'react';
+import { setIsPurchases } from '../store/slices/isPurchases';
 
 const User = () => {
 
