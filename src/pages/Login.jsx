@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/slices/user.slice';
 import { setIsShowingPassword } from '../store/slices/isShowingPassword.slice';
+import { setUserCreated } from '../store/slices/userCreated';
 
 const Login = () => {
 
@@ -14,12 +15,21 @@ const Login = () => {
   const navigate = useNavigate('/')
   const { register, reset, handleSubmit } = useForm();
 
-
   const isShowingPassword = useSelector(state => state.isShowingPassword);
+  const userCreated = useSelector(state => state.userCreated);
 
   useEffect(() => {
     dispatch(setIsShowingPassword(false))
     window.scrollTo(0, 0);
+    setTimeout(() => {      
+      if (userCreated) {
+        document.getElementById('user-created').classList.add('active__user-created');
+        setTimeout(() => {
+          document.getElementById('user-created').classList.remove('active__user-created');
+          dispatch(setUserCreated(!userCreated));
+        }, 3000);
+      }
+    }, 10)
   }, [])
 
   const userFormSubmit = (obj) => {
@@ -121,7 +131,7 @@ const Login = () => {
                 <i className='bx bx-show bx-sm'
                   onClick={() => dispatch(setIsShowingPassword(!isShowingPassword))}
                 ></i>
-              )};
+              )}
             </div>
             <div className="line-bar" id='line-bar__pw'></div>
           </div>

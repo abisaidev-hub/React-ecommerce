@@ -931,6 +931,7 @@ nav{
   border: none;
   font-weight: bold;
   padding: 0.5rem;
+  color: black;
 }
 
 .signup__login button:hover{
@@ -973,7 +974,7 @@ nav{
 .pop-up__user-created{
   position: fixed;
   z-index: 2;
-  top: 10px;
+  top: -50px;
   left: calc(50% - 125px);
   padding: 0.5rem;
   width: 250px;
@@ -986,6 +987,10 @@ nav{
 
 .pop-up__user-created p{
   color: white;
+}
+
+.active__user-created{
+  transform: translate(0, 60px);
 }
 
 .login-container{
@@ -1114,6 +1119,7 @@ nav{
   border: none;
   font-weight: bold;
   padding: 0.5rem;
+  color: black;
 }
 
 .login__signup button:hover{

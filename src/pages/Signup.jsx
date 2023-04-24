@@ -3,8 +3,8 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { setUser } from '../store/slices/user.slice';
 import { setIsShowingPassword } from '../store/slices/isShowingPassword.slice';
+import { setUserCreated } from "../store/slices/userCreated";
 
 const Signup = () => {
 
@@ -19,6 +19,7 @@ const Signup = () => {
   const { register, reset, handleSubmit } = useForm();
 
   const isShowingPassword = useSelector(state => state.isShowingPassword);
+  const userCreated = useSelector(state => state.userCreated);
 
   const fillLinePassword = () => {
     document.getElementById('line-bar__pw').classList.add('fill');
@@ -31,9 +32,9 @@ const Signup = () => {
     //console.log(data)
     axios.post('https://e-commerce-api-v2.academlo.tech/api/v1/users', data)
       .then(() => {
+        dispatch(setUserCreated(!userCreated));
         navigate('/login');
         window.scrollTo(0, 0);
-        //console.log(res.data)
       })
       .catch(err => {
         if(err){
