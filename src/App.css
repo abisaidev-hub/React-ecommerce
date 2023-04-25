@@ -706,13 +706,48 @@ nav{
 
 .pd-img-container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 5rem 0;
+  width: 100%;
 }
 
-.pd-img-container img{
+.pd-img-container__img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.pd-img-container__img img{
   max-width: 225px;
-  max-height: 275px;
+  max-height: 150px;
+}
+
+.pd-img-container__imgs{
+  display: flex;
+  padding: 0.5rem 0;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.imgs__img{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+  width: 80px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.imgs__img:hover{
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.imgs__img img{
+  height: 50px;
 }
 
 .pd-line{
@@ -931,7 +966,7 @@ nav{
 }
 
 .signup__form-container button:focus{
-  outline: 1px dotted black;
+  outline: 1px dashed black;
 }
 
 .signup__login{
@@ -1073,7 +1108,7 @@ nav{
 }
 
 .login-form-container button:focus{
-  outline: 1px dotted black;
+  outline: 1px dashed black;
 }
 
 .login-input-container{

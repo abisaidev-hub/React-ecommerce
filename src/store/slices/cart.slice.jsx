@@ -24,7 +24,7 @@ export const getCartThunk = () => (dispatch) => {
         })
         .catch(() => dispatch(setIsCartWithProducts(false)))
         .finally(() => {
-          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          document.getElementById('loader-overlay')?.classList.remove('loader-overlay__appear');
           setTimeout(() => {
             dispatch(setIsLoading(false))
           }, 500);

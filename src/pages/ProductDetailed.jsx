@@ -57,6 +57,11 @@ const ProductDetailed = () => {
     }
   }
 
+  const selectImage = (url) => {
+    let mainImg = document.getElementById('main-image');
+    mainImg.src = url;
+  }
+
   return (
     <div className='product-detailed-container'>
       <div className="pd-btn-container">
@@ -78,7 +83,18 @@ const ProductDetailed = () => {
         <div className="product-container">
           <h2>{productData?.title}</h2>
           <div className="pd-img-container">
-            <img src={productData?.images?.[0].url} alt="" />
+            <div className="pd-img-container__img">
+              <img src={productData?.images?.[0].url} id='main-image'/>
+            </div>
+            <ul className="pd-img-container__imgs">
+              {productData?.images?.map(image => (
+                <li className='imgs__img' onClick={() => selectImage(image.url)} key={image.url}>
+                  <img src={image.url}/>
+                </li>
+              ))
+              }
+            </ul>
+
           </div>
           <div className="pd-line"></div>
           <div className="product-price-buy">
