@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultpp from '../images/default-pp.jpg'
+import defaultpp from '../images/default-pp.png'
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setIsCartWithProducts } from '../store/slices/isCartWithProducts.slice';

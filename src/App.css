@@ -100,7 +100,7 @@ nav{
 
 .nav__icon{
   display: flex;
-  gap: 0.5rem;
+  gap: 0.35rem;
   align-items: center;
 }
 
@@ -117,7 +117,7 @@ nav{
 }
 
 .nav__icon img{
-  width: 25px;
+  width: 20px;
 }
 
 .nav__options{
@@ -499,6 +499,10 @@ nav{
   cursor: pointer;
 }
 
+.cart-checkout-btn:focus{
+  outline: 1px dotted black;
+}
+
 .cart-empty{
   display: flex;
   height: 90%;
@@ -738,13 +742,13 @@ nav{
   border-bottom: 1px solid black;
   width: 80px;
   cursor: pointer;
-  opacity: 0.5;
-  transition: 0.2s;
+  opacity: 0.3;
+  transition: 0.33s;
 }
 
 .imgs__img:hover{
   opacity: 1;
-  transition: 0.2s;
+  transition: 0.33s;
 }
 
 .imgs__img img{
@@ -818,10 +822,11 @@ nav{
   border: none;
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
-.pd-add-product-btn{
-  cursor: pointer;
+.pd-add-product-btn:focus{
+  outline: 1px dotted black;
 }
 
 .pd-sugested-products-container{
@@ -967,7 +972,7 @@ nav{
 }
 
 .signup__form-container button:focus{
-  outline: 1px dashed black;
+  outline: 1px dotted black;
 }
 
 .signup__login{
@@ -1059,6 +1064,7 @@ nav{
   flex-direction: column;
   margin: 3rem auto 0 auto;
   max-width: 400px;
+  gap: 0.5rem;
 }
 
 .login-test-container p{
@@ -1068,7 +1074,6 @@ nav{
 .login-test-credentials-container{
   background-color: white;
   padding: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .login-test-credentials-container p{
@@ -1109,7 +1114,7 @@ nav{
 }
 
 .login-form-container button:focus{
-  outline: 1px dashed black;
+  outline: 1px dotted black;
 }
 
 .login-input-container{
@@ -1197,7 +1202,6 @@ nav{
 }
 
 .user-data-container{
-  background-color: white;
   padding: 1rem;
 }
 
@@ -1207,13 +1211,12 @@ nav{
 }
 
 .user-data-img-container img{
-  width: 75px;
-  border-radius: 50%;
+  width: 100px;
 }
 
 .user-data-name-container{
   padding: 0.5rem;
-  margin: 0.5rem 0 2rem 0;
+  margin: 0 0 3rem 0;
   display: flex;
   justify-content: center;
 }
@@ -1230,8 +1233,8 @@ nav{
   cursor: pointer;
 }
 
-.user-extra-data{
-  height: 50vh;
+.user-data-container button:focus{
+  outline: 1px dotted black;
 }
 
 /* Purchases */
@@ -1567,7 +1570,6 @@ nav{
 
   .pd-img-container{
     width: 750px;
-    height: 300px;
     align-items: center;
   }
 

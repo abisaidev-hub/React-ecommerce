@@ -145,12 +145,13 @@ const Login = () => {
         </button>
       </div>
       <div className="login-test-container">
-        <p><b>TEST DATA {':)'}</b></p>
+        <p><b>DON'T WANT TO CREATE AN ACCOUNT? YOU CAN USE THE FOLLOWING CREDENTIALS</b></p>
         <div className="login-test-credentials-container">
           <p>abisai@test.com</p>
           <p>test1234</p>
           {/*<button onClick={useTestCredentials}>Use credentials</button>*/}
         </div>
+        <p><b>FOR FULL EXPERIENCE, PLEASE CREATE AN ACCOUNT {':)'}<br/>{'(HIGHLY RECOMMENDED)'}</b></p>
       </div>
     </div>
   );

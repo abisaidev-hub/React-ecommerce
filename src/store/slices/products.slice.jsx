@@ -19,7 +19,7 @@ export const getProductsThunk = () => (dispatch) => {
     return axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/products')
         .then((res) => dispatch(setProducts(res.data)))
         .finally(() => {
-          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          document.getElementById('loader-overlay')?.classList.remove('loader-overlay__appear');
           setTimeout(() => {
             dispatch(setIsLoading(false))
           }, 500)
@@ -32,7 +32,7 @@ export const filterProductsThunk = (searchedValueFixed) => (dispatch) => {
     return axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?title=${searchedValueFixed}`)
         .then((res) => dispatch(setProducts(res.data)))
         .finally(() => {
-          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          document.getElementById('loader-overlay')?.classList.remove('loader-overlay__appear');
           setTimeout(() => {
             dispatch(setIsLoading(false))
           }, 500);
@@ -44,7 +44,7 @@ export const filterByCategoryThunk = (categoryId) => (dispatch) => {
     return axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${categoryId}`)
         .then((res) => dispatch(setProducts(res.data)))
         .finally(() => {
-          document.getElementById('loader-overlay').classList.remove('loader-overlay__appear');
+          document.getElementById('loader-overlay')?.classList.remove('loader-overlay__appear');
           setTimeout(() => {
             dispatch(setIsLoading(false))
           }, 500);
