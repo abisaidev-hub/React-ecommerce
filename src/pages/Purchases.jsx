@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPurchasesThunk } from '../store/slices/purchases.slice';
+import { getPurchasesThunk, setPurchases } from '../store/slices/purchases.slice';
 import { getProductsThunk } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,6 +22,10 @@ const Purchases = () => {
 
   //console.log(purchases)
   //console.log(products)
+
+  if (purchases.length === 0) {
+    dispatch(setPurchases(false))
+  }
 
   const purchaseDate = (time) => {
     return new Date(time).toLocaleDateString('en-us', {
