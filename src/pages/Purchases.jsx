@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPurchasesThunk } from '../store/slices/purchases.slice';
 import { getProductsThunk } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
+import { setIsPurchases } from '../store/slices/isPurchases';
 
 const Purchases = () => {
 
@@ -18,7 +19,11 @@ const Purchases = () => {
     dispatch(getPurchasesThunk());
     dispatch(getProductsThunk());
     window.scrollTo(0, 0);
-  }, [])
+  }, []);
+
+  if (purchases.length === 0) {
+    dispatch(setIsPurchases(false));
+  };
 
   //console.log(purchases)
   //console.log(products)

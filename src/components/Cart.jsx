@@ -61,7 +61,6 @@ const Cart = () => {
       dispatch(setIsShowingCart(false));
     }, 500);
     dispatch(purchaseCartThunk());
-    dispatch(setIsPurchases(true))
     navigate('/purchases');
     window.scrollTo(0, 0);
   }
