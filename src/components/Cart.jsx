@@ -5,6 +5,7 @@ import { getCartThunk } from '../store/slices/cart.slice';
 import { deleteProductInCart, purchaseCartThunk, updateProductInCartThunk } from '../store/slices/cart.slice';
 import { setIsCartWithProducts } from '../store/slices/isCartWithProducts.slice';
 import { useNavigate } from 'react-router-dom';
+import { setIsPurchases } from '../store/slices/isPurchases';
 
 const Cart = () => {
 
@@ -60,6 +61,7 @@ const Cart = () => {
       dispatch(setIsShowingCart(false));
     }, 500);
     dispatch(purchaseCartThunk());
+    dispatch(setIsPurchases(true))
     navigate('/purchases');
     window.scrollTo(0, 0);
   }
