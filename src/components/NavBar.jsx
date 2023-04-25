@@ -4,6 +4,7 @@ import { setIsShowingCart } from '../store/slices/isShowingCart.slice'
 import { useDispatch, useSelector } from 'react-redux';
 import { getCartThunk } from '../store/slices/cart.slice';
 import { useEffect } from 'react';
+import icon from '../images/icon.png';
 
 const NavBar = () => {
 
@@ -35,7 +36,8 @@ const NavBar = () => {
           navigate('/')
           window.scrollTo(0, 0)}  
           }>
-          <p>{"FXSHOP"}</p>
+          <img src={icon} alt="icon" />
+          <p>{"ELECTROMART"}</p>
         </div>
         <div className="nav__options">
           <ul>

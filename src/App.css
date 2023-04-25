@@ -85,6 +85,11 @@ nav{
   color: white;
 }
 
+.nav-scroll .nav__icon img{
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
 .nav__container{
   display: flex;
   justify-content: space-between;
