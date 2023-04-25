@@ -23,7 +23,9 @@ const Purchases = () => {
 
   if (purchases.length === 0) {
     dispatch(setIsPurchases(false));
-  };
+  } else if (purchases.length > 0) {
+    dispatch(setIsPurchases(true));
+  }
 
   //console.log(purchases)
   //console.log(products)
