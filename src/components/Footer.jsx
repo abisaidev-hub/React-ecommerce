@@ -51,10 +51,11 @@ const Footer = () => {
               </li>
             }
             {categories.map(category => (
-                  <li key={category.id} onClick={() => {navigate('/')
-                  dispatch(setShowAll(true))
-                  dispatch(filterByCategoryThunk(category.id))
+                  <li key={category.id} onClick={() => {
                   window.scrollTo(0, 0)
+                  dispatch(filterByCategoryThunk(category.id))
+                  dispatch(setShowAll(true))
+                  navigate('/')
                   }}>
                     {category.name.toUpperCase()}
                   </li>
