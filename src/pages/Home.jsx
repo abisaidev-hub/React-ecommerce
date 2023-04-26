@@ -26,7 +26,7 @@ const Home = () => {
   useEffect(() => {
 
     if (showAll) {
-
+      window.scrollTo(0, 0);
     } else {
       dispatch(getProductsThunk());
     }
