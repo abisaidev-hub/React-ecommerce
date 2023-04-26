@@ -40,17 +40,11 @@ const Signup = () => {
         if(err){
           //alert('Invalid username and/or password');
           //console.error(err);
-          document.getElementById('login-failed')?.classList.add('active__login-failed');
+          document.getElementById('signup-failed')?.classList.add('active__signup-failed');
           setTimeout(() => {
-            document.getElementById('login-failed')?.classList.remove('active__login-failed');
+            document.getElementById('signup-failed')?.classList.remove('active__signup-failed');
           }, 3000);
         }
-      })
-      .finally(() => {
-        document.getElementById('login-failed')?.classList.add('active__login-failed');
-        setTimeout(() => {
-          document.getElementById('login-failed')?.classList.remove('active__login-failed');
-        }, 3000);
       })
     /*reset({
       email: '',
@@ -60,6 +54,17 @@ const Signup = () => {
 
   return (
     <div className="signup__container">
+      <div className="pop-up__signup-failed" id='signup-failed'>
+        <p>The email is already in used</p>
+        {/*<div className="signup-failed__desc">
+            <p>- The email is already in used<br />
+            - Information required:<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Email address<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• First name<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Last name<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Password</p>
+        </div>*/}
+      </div>
       <div className="signup__form-container">
         <h2>Signup</h2>
         <form onSubmit={handleSubmit(signup)}>

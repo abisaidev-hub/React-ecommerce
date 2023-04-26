@@ -934,6 +934,33 @@ nav{
   padding-bottom: 3rem;
 }
 
+.pop-up__signup-failed{
+  position: fixed;
+  z-index: 2;
+  top: -50px;
+  left: calc(50% - 125px);
+  padding: 0.5rem;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: orange;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.pop-up__signup-failed p{
+  color: white;
+}
+
+.signup-failed__desc{
+  text-align: start;
+}
+
+.active__signup-failed{
+  transform: translate(0, 60px);
+}
+
 .signup__form-container{
   padding: 1rem 1.2rem;
   text-align: center;

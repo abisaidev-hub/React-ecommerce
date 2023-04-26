@@ -44,7 +44,7 @@ const Home = () => {
         setTimeout(() => {
           document.getElementById('logged-in').classList.remove('active__logged-in');
           dispatch(setIsLoggedIn(!isLoggedIn));
-        }, 3000);
+        }, 2500);
       }
     }, 10)
 
