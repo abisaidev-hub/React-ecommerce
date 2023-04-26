@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import FilterByCategory from '../components/FilterByCategory';
 import { getProductsThunk, filterProductsThunk } from '../store/slices/products.slice';
 import { setIsShowing } from '../store/slices/isShowing.slice'
-import { getCartThunk } from '../store/slices/cart.slice';
 import { useNavigate } from 'react-router-dom'
 import { setShowAll } from '../store/slices/showAll.slice';
 
@@ -25,7 +24,13 @@ const Home = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(getProductsThunk());
+
+    if (showAll) {
+
+    } else {
+      dispatch(getProductsThunk());
+    }
+
     window.scrollTo(0, 0);
     // Categories
     axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/categories')
@@ -63,6 +68,7 @@ const Home = () => {
             <input
               type="text"
               placeholder='Find a product...'
+              name='find-product'
               onChange={e => setSearchedValue(e.target.value)}
               value={searchedValue}
               onFocus={fillLine}
