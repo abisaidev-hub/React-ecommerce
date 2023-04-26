@@ -6,6 +6,7 @@ import { getProductsThunk, filterProductsThunk } from '../store/slices/products.
 import { setIsShowing } from '../store/slices/isShowing.slice'
 import { useNavigate } from 'react-router-dom'
 import { setShowAll } from '../store/slices/showAll.slice';
+import { setIsLoggedIn } from '../store/slices/isLoggedIn';
 
 const Home = () => {
 
@@ -21,12 +22,13 @@ const Home = () => {
   const products = useSelector(state => state.products);
   const isShowing = useSelector(state => state.isShowing);
   const showAll = useSelector(state => state.showAll);
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
   const dispatch = useDispatch();
   
   useEffect(() => {
 
     if (showAll) {
-      
+
     } else {
       dispatch(getProductsThunk());
     }
@@ -35,6 +37,17 @@ const Home = () => {
     // Categories
     axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/categories')
     .then(res => setCategories(res.data))
+
+    setTimeout(() => {      
+      if (isLoggedIn) {
+        document.getElementById('logged-in').classList.add('active__logged-in');
+        setTimeout(() => {
+          document.getElementById('logged-in').classList.remove('active__logged-in');
+          dispatch(setIsLoggedIn(!isLoggedIn));
+        }, 3000);
+      }
+    }, 10)
+
   }, []);
   //console.log(products)
   //console.log(categories)
@@ -62,6 +75,9 @@ const Home = () => {
   
   return (
     <div className="home__container">
+      <div className="pop-up__logged-in" id='logged-in'>
+        <p>Logged in successfully!</p>
+      </div>
       <div className="home__menu">
         <div className="input-container">
           <form onSubmit={submitForm}>

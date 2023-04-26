@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/slices/user.slice';
 import { setIsShowingPassword } from '../store/slices/isShowingPassword.slice';
 import { setUserCreated } from '../store/slices/userCreated';
+import { setIsLoggedIn } from '../store/slices/isLoggedIn';
 
 const Login = () => {
 
@@ -17,6 +18,7 @@ const Login = () => {
 
   const isShowingPassword = useSelector(state => state.isShowingPassword);
   const userCreated = useSelector(state => state.userCreated);
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
 
   useEffect(() => {
     dispatch(setIsShowingPassword(false))
@@ -40,6 +42,7 @@ const Login = () => {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('username', `${res.data.user.firstName} ${res.data.user.lastName}`);
         dispatch(setUser(res.data.data));
+        dispatch(setIsLoggedIn(!isLoggedIn));
         navigate('/');
         window.scrollTo(0, 0);
         //console.log(res.data)
@@ -151,7 +154,7 @@ const Login = () => {
           <p>test1234</p>
           {/*<button onClick={useTestCredentials}>Use credentials</button>*/}
         </div>
-        <p><b>FOR FULL EXPERIENCE, PLEASE CREATE AN ACCOUNT {':)'}<br/>{'(HIGHLY RECOMMENDED)'}</b></p>
+        <p><b>FOR FULL EXPERIENCE, PLEASE CREATE AN ACCOUNT<br/>{'(HIGHLY RECOMMENDED ;))'}</b></p>
       </div>
     </div>
   );

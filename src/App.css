@@ -152,6 +152,28 @@ nav{
   margin: 0 auto;
 }
 
+.pop-up__logged-in{
+  position: fixed;
+  z-index: 2;
+  top: -50px;
+  left: calc(50% - 125px);
+  padding: 0.5rem;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.pop-up__logged-in p{
+  color: white;
+}
+
+.active__logged-in{
+  transform: translate(0, 60px);
+}
+
 .home__menu{
   margin-bottom: 0.25rem;
 }
@@ -1571,6 +1593,16 @@ nav{
 
   /* Product Detailed */
 
+  .product-container__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .product-container__container .pd-line{
+    margin: 0;
+  }
+
   .product-detailed-container{
     max-width: 1200px;
     margin: 0 auto;
@@ -1578,6 +1610,7 @@ nav{
 
   .product-container{
     justify-content: space-between;
+    height: 100%;
   }
 
   .product-desc-buy{
