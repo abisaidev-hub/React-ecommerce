@@ -79,7 +79,7 @@ const Home = () => {
         <p>Logged in successfully!</p>
       </div>
       <div className="home__menu">
-        <div className="input-container">
+        <div className="input-container" data-aos="fade-up">
           <form onSubmit={submitForm}>
             <input
               type="text"
@@ -96,7 +96,7 @@ const Home = () => {
           </form>
           <div className="line-bar" id='line-bar__home'></div>
         </div>
-        <div className="filter-container">
+        <div className="filter-container" data-aos="fade-up">
           {showAll &&
             <button className='filter-container__show-all' onClick={(e) => {
               dispatch(getProductsThunk())

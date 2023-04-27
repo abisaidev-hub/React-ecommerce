@@ -32,14 +32,14 @@ const NavBar = () => {
   return (
     <nav>
       <div className="nav__container">
-        <div className="nav__icon" onClick={() => {
+        <div className="nav__icon" data-aos="fade-down-right" onClick={() => {
           navigate('/')
           window.scrollTo(0, 0)}  
           }>
           <img src={icon} alt="icon" />
           <p>{"ELECTROMART"}</p>
         </div>
-        <div className="nav__options">
+        <div className="nav__options" data-aos="fade-down-left">
           <ul>
             <li onClick={() => token ? navigate('/user') : navigate('/login')}>
               <i className='bx bxs-user bx-sm'></i>
