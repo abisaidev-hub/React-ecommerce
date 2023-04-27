@@ -139,7 +139,7 @@ const Signup = () => {
           <button><h3>CREATE ACCOUNT</h3></button>
         </form>
       </div>
-      <div className="signup__login" data-aos="fade-up">
+      <div className="signup__login">
         <button onClick={() => navigate('/login')}>
           I ALREADY HAVE AN ACCOUNT
           <div className="line-bar"></div>

@@ -147,7 +147,7 @@ const Login = () => {
           <div className="line-bar"></div>
         </button>
       </div>
-      <div className="login-test-container" data-aos="fade-down">
+      <div className="login-test-container" data-aos="fade-up">
         <p><b>DON'T WANT TO CREATE AN ACCOUNT? YOU CAN USE THE FOLLOWING CREDENTIALS</b></p>
         <div className="login-test-credentials-container">
           <p>abisai@test.com</p>
