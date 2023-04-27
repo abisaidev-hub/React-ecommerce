@@ -115,7 +115,7 @@ const Home = () => {
       <div className='products-ul-container'>
         <ul>
           {products.map(product => (
-            <li key={product.id} className='product-card' onClick={() => {
+            <li key={product.id} className='product-card' data-aos="fade-up" onClick={() => {
               navigate(`/product/${product.id}`)
               window.scrollTo(0, 0);
               }}>
