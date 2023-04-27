@@ -74,10 +74,10 @@ const Purchases = () => {
   return (
     <div className='purchases-view-container'>
       <div className="pch-ul-container">
-        <h2>Purchase history</h2>
+        <h2 data-aos="fade-up">Purchase history</h2>
         <ul className='pch-ul'>
           {purchases.map(purchase => (
-            <li key={purchase.id} className='pch-container'>
+            <li key={purchase.id} className='pch-container' data-aos="fade-up">
               <div className="pch-date-container">
                 <p>{purchaseDate(purchase.createdAt)}</p>
               </div>
@@ -114,7 +114,7 @@ const Purchases = () => {
       <div className="pch-total-pchs-container">
         {isPurchases ?
           (
-            <div>
+            <div data-aos="fade-up">
               <p><b>TOTAL PURCHASED</b>: ${purchasedInTotal()}</p>
             </div>
           ) : (

@@ -64,13 +64,13 @@ const ProductDetailed = () => {
 
   return (
     <div className='product-detailed-container'>
-      <div className="pd-btn-container">
+      <div className="pd-btn-container" data-aos="fade-right">
         <button onClick={() => navigate('/') /*-1*/}>
           <i className='bx bxs-chevron-left bx-sm'></i>
           <p>BACK</p>
         </button>
       </div>
-      <div className="pd-category-container">
+      <div className="pd-category-container" data-aos="fade-up">
         <div className='pd-category-container__category'>
           <p>{productData?.category?.name?.toUpperCase()}</p>
         </div>
@@ -80,7 +80,7 @@ const ProductDetailed = () => {
         </div>
       </div>
       <div className="product-desc-buy">
-        <div className="product-container__container">
+        <div className="product-container__container" data-aos="fade-up">
           <div className="product-container">
             <h2>{productData?.title}</h2>
             <div className="pd-img-container">
@@ -117,7 +117,7 @@ const ProductDetailed = () => {
           </div>
           <div className="pd-line"></div>
         </div>
-        <div className="pd-description-container">
+        <div className="pd-description-container" data-aos="fade-up">
           <div className="pd-description-container__description">
             <h3>About this product</h3>
             <p>{productData?.description}</p>
@@ -126,11 +126,11 @@ const ProductDetailed = () => {
         </div>
       </div>
       <div className="pd-sugested-products-container">
-        <h3>You may like...</h3>
+        <h3 data-aos="fade-up">You may like...</h3>
         <div className="pd-sugested-products-ul">
           <ul>
             {sugestedProducts.map(sugestedProduct => (
-              <li key={sugestedProduct.id} onClick={() => {
+              <li key={sugestedProduct.id} data-aos="fade-up" onClick={() => {
                 navigate(`/product/${sugestedProduct.id}`)
                 window.scrollTo(0, 0);
               }}>

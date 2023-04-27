@@ -65,7 +65,7 @@ const Signup = () => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Password</p>
         </div>*/}
       </div>
-      <div className="signup__form-container">
+      <div className="signup__form-container" data-aos="fade-down">
         <h2>Signup</h2>
         <form onSubmit={handleSubmit(signup)}>
           <div className="signup__input-container">
@@ -139,7 +139,7 @@ const Signup = () => {
           <button><h3>CREATE ACCOUNT</h3></button>
         </form>
       </div>
-      <div className="signup__login">
+      <div className="signup__login" data-aos="fade-up">
         <button onClick={() => navigate('/login')}>
           I ALREADY HAVE AN ACCOUNT
           <div className="line-bar"></div>

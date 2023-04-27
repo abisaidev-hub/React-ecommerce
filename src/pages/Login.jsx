@@ -88,12 +88,12 @@ const Login = () => {
   return (
     <div className='login-container'>
       <div className="pop-up__login-failed" id='login-failed'>
-        <p>Invalid username or password</p>
+        <p>Invalid email or password</p>
       </div>
       <div className="pop-up__user-created" id='user-created'>
         <p>User created successfully!</p>
       </div>
-      <div className="login-form-container">
+      <div className="login-form-container" data-aos="fade-down">
         <h2>Login</h2>
         <form onSubmit={handleSubmit(userFormSubmit)}>
           <div className="login-input-container">
@@ -141,13 +141,13 @@ const Login = () => {
           <button><h3>LOGIN</h3></button>
         </form>
       </div>
-      <div className="login__signup">
+      <div className="login__signup" data-aos="fade-up">
         <button onClick={() => navigate('/signup')}>
           I WANT TO CREATE AN ACCOUNT
           <div className="line-bar"></div>
         </button>
       </div>
-      <div className="login-test-container">
+      <div className="login-test-container" data-aos="fade-down">
         <p><b>DON'T WANT TO CREATE AN ACCOUNT? YOU CAN USE THE FOLLOWING CREDENTIALS</b></p>
         <div className="login-test-credentials-container">
           <p>abisai@test.com</p>
