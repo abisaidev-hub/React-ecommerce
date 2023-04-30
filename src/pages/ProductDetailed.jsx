@@ -28,6 +28,7 @@ const ProductDetailed = () => {
 
   useEffect(() => {
     const productSelected = allProducts.find(product => product.id === Number(productId));
+    
     if (productSelected) {
       setProductData(productSelected);
       // Sugested products filtering
@@ -35,7 +36,7 @@ const ProductDetailed = () => {
       const filteredProductsFixed = filteredProducts.filter(product => product.id !== productSelected.id)
       setSugestedProducts(filteredProductsFixed)
     } else {
-      navigate('/*')
+      navigate('*');
     }
 
   }, [allProducts, productId])
