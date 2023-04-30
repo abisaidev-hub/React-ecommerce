@@ -1608,10 +1608,6 @@ nav{
 
   /* Product Detailed */
 
-  .pd-description-container{
-    gap: 0.2rem;
-  }
-
   .pd-description-container__description{
     height: 100%;
     display: flex;
@@ -1719,6 +1715,10 @@ nav{
   .pd-img-container{
     width: 750px;
     align-items: center;
+  }
+
+  .pd-description-container{
+    gap: 0.2rem;
   }
 
   .pd-sugested-products-container{
