@@ -95,7 +95,6 @@ const ProductDetailed = () => {
                 ))
                 }
               </ul>
-
             </div>
             <div className="pd-line"></div>
             <div className="product-price-buy">
@@ -117,12 +116,38 @@ const ProductDetailed = () => {
           </div>
           <div className="pd-line"></div>
         </div>
-        <div className="pd-description-container" data-aos="fade-up">
-          <div className="pd-description-container__description">
-            <h3>About this product</h3>
-            <p>{productData?.description}</p>
+        <div className="pd-description-container">
+          <div className="pd-description-container__description" data-aos="fade-up">
+            <div className="description-container">
+              <h3>Product details</h3>
+              <p>{productData?.description}</p>
+            </div>
+            <div className="line-bar"></div>
           </div>
-          <div className="line-bar"></div>
+          <div className="pd-description-container__additional" data-aos="fade-up">
+            <div className="additional-container">
+              <i className='bx bx-credit-card-front bx-sm'></i>
+              <div className="additional-container__description">
+                <h3>PAYMENT</h3>
+                <p>Credit card, debit card or PayPal</p>
+              </div>
+            </div>
+            <div className="additional-container">
+              <i className='bx bx-package bx-sm'></i>
+              <div className="additional-container__description">
+                <h3>SHIPPING & DELIVERY</h3>
+                <p>Complimentary Green Delivery</p>
+              </div>
+            </div>
+            <div className="additional-container">
+              <i class='bx bx-rotate-right bx-sm'></i>
+              <div className="additional-container__description">
+                <h3>RETURNS & EXCHANGES</h3>
+                <p>Complimentary</p>
+              </div>
+            </div>
+            <div className="line-bar"></div>
+          </div>
         </div>
       </div>
       <div className="pd-sugested-products-container">
