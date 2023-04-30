@@ -7,6 +7,7 @@ import { setIsShowing } from '../store/slices/isShowing.slice'
 import { useNavigate } from 'react-router-dom'
 import { setShowAll } from '../store/slices/showAll.slice';
 import { setIsLoggedIn } from '../store/slices/isLoggedIn';
+import { setIsLoggedOut } from '../store/slices/isLoggedOut';
 
 const Home = () => {
 
@@ -23,6 +24,7 @@ const Home = () => {
   const isShowing = useSelector(state => state.isShowing);
   const showAll = useSelector(state => state.showAll);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
+  const isLoggedOut = useSelector(state => state.isLoggedOut);
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -40,10 +42,20 @@ const Home = () => {
 
     setTimeout(() => {      
       if (isLoggedIn) {
+        dispatch(setIsLoggedIn(!isLoggedIn));
         document.getElementById('logged-in').classList.add('active__logged-in');
         setTimeout(() => {
           document.getElementById('logged-in').classList.remove('active__logged-in');
-          dispatch(setIsLoggedIn(!isLoggedIn));
+        }, 2500);
+      }
+    }, 10)
+
+    setTimeout(() => {      
+      if (isLoggedOut) {
+        dispatch(setIsLoggedOut(!isLoggedOut));
+        document.getElementById('logged-out').classList.add('active__logged-out');
+        setTimeout(() => {
+          document.getElementById('logged-out').classList.remove('active__logged-out');
         }, 2500);
       }
     }, 10)
@@ -76,7 +88,10 @@ const Home = () => {
   return (
     <div className="home__container">
       <div className="pop-up__logged-in" id='logged-in'>
-        <p>Logged in successfully!</p>
+        <p>Welcome, let's buy!</p>
+      </div>
+      <div className="pop-up__logged-out" id='logged-out'>
+        <p>See you later!</p>
       </div>
       <div className="home__menu">
         <div className="input-container" data-aos="fade-up">

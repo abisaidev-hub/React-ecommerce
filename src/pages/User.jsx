@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setIsCartWithProducts } from '../store/slices/isCartWithProducts.slice';
 import { useEffect } from 'react';
+import { setIsLoggedOut } from '../store/slices/isLoggedOut';
 
 const User = () => {
 
@@ -14,11 +15,13 @@ const User = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector(state => state.user);
+  const isLoggedOut = useSelector(state => state.isLoggedOut);
 
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     dispatch(setIsCartWithProducts(false));
+    dispatch(setIsLoggedOut(!isLoggedOut));
     navigate('/');
   }
 
