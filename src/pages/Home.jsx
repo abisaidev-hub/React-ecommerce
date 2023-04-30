@@ -73,6 +73,11 @@ const Home = () => {
     dispatch(setShowAll(true));
   };
 
+  const selectProduct = (id) => {
+    navigate(`/product/${id}`)
+    window.scrollTo(0, 0);
+  };
+
   const fillLine = () => {
     document.getElementById('line-bar__home').classList.add('fill');
   }
@@ -130,10 +135,7 @@ const Home = () => {
       <div className='products-ul-container'>
         <ul>
           {products.map(product => (
-            <li key={product.id} className='product-card' data-aos="fade-up" onClick={() => {
-              navigate(`/product/${product.id}`)
-              window.scrollTo(0, 0);
-              }}>
+            <li key={product.id} className='product-card' data-aos="fade-up" onClick={() => selectProduct(product.id)}>
 
                 <div className="product-image">
                   <img src={product.images?.[0].url} alt="" />

@@ -27,12 +27,17 @@ const ProductDetailed = () => {
   }, [])
 
   useEffect(() => {
-    const productSelected = allProducts.find(product => product.id === Number(productId))
-    setProductData(productSelected)
-    // Sugested products filtering
-    const filteredProducts = allProducts.filter(product => product.category.id === productSelected.category.id)
-    const filteredProductsFixed = filteredProducts.filter(product => product.id !== productSelected.id)
-    setSugestedProducts(filteredProductsFixed)
+    const productSelected = allProducts.find(product => product.id === Number(productId));
+    if (productSelected) {
+      setProductData(productSelected);
+      // Sugested products filtering
+      const filteredProducts = allProducts.filter(product => product.category.id === productSelected.category.id)
+      const filteredProductsFixed = filteredProducts.filter(product => product.id !== productSelected.id)
+      setSugestedProducts(filteredProductsFixed)
+    } else {
+      navigate('/*')
+    }
+
   }, [allProducts, productId])
 
   //console.log(productData)
@@ -140,7 +145,7 @@ const ProductDetailed = () => {
               </div>
             </div>
             <div className="additional-container">
-              <i class='bx bx-rotate-right bx-sm'></i>
+              <i className='bx bx-rotate-right bx-sm'></i>
               <div className="additional-container__description">
                 <h3>RETURNS & EXCHANGES</h3>
                 <p>Complimentary</p>
