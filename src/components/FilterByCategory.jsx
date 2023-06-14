@@ -28,10 +28,11 @@ const FilterByCategory = ({categories}) => {
 
   return (
     <div className='filter-by-category-overlay' id='filter-overlay'>
+      <div className="fbc_empty" onClick={closeFilter}></div>
       <div className="filter-by-category-container" id='filter-nav'>
         <div className='fbc-btn-container'>
           <button onClick={closeFilter}>
-            <i className='bx bx-x bx-md' ></i>
+            <i className="bi bi-x-lg"></i>
           </button>
         </div>
         <div className="fbc-options-container">

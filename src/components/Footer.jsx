@@ -66,17 +66,17 @@ const Footer = () => {
           <ul>
             <li data-aos="flip-up">
               <a href="https://www.instagram.com/" target='_blank'>
-                <i className='bx bxl-instagram-alt bx-sm' ></i>
+                <i className="bi bi-instagram"></i>
               </a>
             </li>
             <li data-aos="flip-up">
               <a href="https://www.facebook.com/" target='_blank'>
-                <i className='bx bxl-facebook bx-sm'></i>
+                <i className="bi bi-facebook"></i>
               </a>
             </li>
             <li data-aos="flip-up">
               <a href="https://twitter.com/" target='_blank'>
-                <i className='bx bxl-twitter bx-sm' ></i>
+                <i className="bi bi-twitter"></i>
               </a>
             </li>
           </ul>
@@ -88,12 +88,12 @@ const Footer = () => {
           <ul>
             <li> 
               <a href="https://www.linkedin.com/in/abisaidev" target="_blank">
-                <i className='bx bxl-linkedin-square bx-sm' ></i>
+                <i className="bi bi-linkedin"></i>
               </a>
             </li>
             <li>
               <a href="https://github.com/abisaidev-hub" target='_blank'>
-                <i className='bx bxl-github bx-sm' ></i>
+                <i className="bi bi-github"></i>
               </a>
             </li>
           </ul>

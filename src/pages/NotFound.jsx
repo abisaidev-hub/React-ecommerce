@@ -11,7 +11,7 @@ const NotFound = () => {
         <h2>Oops! Page not found!</h2>
         <p>We are very sorry for the inconvenience. It looks like you're trying to access a page that has been deleted or never existed!</p>
         <span>404</span>
-        <i className='bx bxs-error-alt bx-lg'></i>
+          <i className="bi bi-exclamation-octagon-fill"></i>
         <button onClick={() => navigate('/')}>
           BACK TO HOME
           <div className="line-bar"></div>

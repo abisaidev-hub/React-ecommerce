@@ -99,10 +99,11 @@ const Cart = () => {
 
   return (
     <div className='cart-overlay' id='cart-overlay'>
+      <div className="cart_empty" onClick={closeCart}></div>
       <div className="cart-container" id='cart-container'>
         <div className='cart-close-btn'>
           <button onClick={closeCart}>
-            <i className='bx bx-x bx-sm' ></i>
+            <i className="bi bi-x-lg"></i>
           </button>
         </div>
         {isCartWithProducts ?
@@ -135,7 +136,7 @@ const Cart = () => {
                     </div>
                     <div>
                       <button className='cart-item-delete-btn' onClick={() => deleteProduct(item)}>
-                        <i className='bx bxs-trash bx-sm'></i>
+                        <i className="bi bi-trash3-fill"></i>
                       </button>
                     </div>
                   </div>
@@ -153,7 +154,7 @@ const Cart = () => {
         ) : (
           <div className='cart-empty'>
             <h2>Your cart is empty :{'('}</h2>
-            <i className='bx bx-cart bx-lg' ></i>
+            <i className="bi bi-cart"></i>
           </div>
         )
         }

@@ -127,11 +127,11 @@ const Login = () => {
               />
               {isShowingPassword ?
               (
-                <i className='bx bx-hide bx-sm'
+                <i className="bi bi-eye-slash-fill"
                   onClick={() => dispatch(setIsShowingPassword(!isShowingPassword))}
                 ></i>
               ) : (
-                <i className='bx bx-show bx-sm'
+                <i className="bi bi-eye-fill"
                   onClick={() => dispatch(setIsShowingPassword(!isShowingPassword))}
                 ></i>
               )}

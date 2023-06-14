@@ -111,7 +111,7 @@ const Home = () => {
               onBlur={unfillLine}
             />
             <button>
-              <i className='bx bx-search-alt bx-sm'></i>
+              <i className="bi bi-search"></i>
             </button>
           </form>
           <div className="line-bar" id='line-bar__home'></div>
@@ -125,7 +125,7 @@ const Home = () => {
             </button>
           }
           <button onClick={filterNav} className='btn-for-filter'>
-            <i className='bx bx-slider bx-sm' ></i>
+            <i className="bi bi-sliders"></i>
           </button>
           {isShowing &&
             <FilterByCategory categories={categories}/>

@@ -42,17 +42,19 @@ const NavBar = () => {
         <div className="nav__options" data-aos="fade-down-left">
           <ul>
             <li onClick={() => token ? navigate('/user') : navigate('/login')}>
-              <i className='bx bxs-user bx-sm'></i>
+            <i className="bi bi-person-fill"></i>
             </li>
             <li onClick={() => token ? navigate('/purchases') : navigate('/login')}>
-              <i className='bx bxs-basket bx-sm' ></i>
+              <i className="bi bi-basket-fill"></i>
             </li>
             <li onClick={() => token ? dispatch(setIsShowingCart(true)) : navigate('/login')}>
               {isCartWithProducts ?
                 (
-                  <i className='bx bxs-cart bx-sm' ></i>
+                  //<i className='bx bxs-cart bx-sm' ></i>
+                  <i className="bi bi-cart-fill"></i>
                 ) : (
-                  <i className='bx bx-cart bx-sm' ></i>
+                  //<i className='bx bx-cart bx-sm' ></i>
+                  <i className="bi bi-cart"></i>
                 )
               }
             </li>

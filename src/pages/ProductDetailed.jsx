@@ -28,19 +28,25 @@ const ProductDetailed = () => {
 
   useEffect(() => {
     const productSelected = allProducts.find(product => product.id === Number(productId));
-    
-    if (productSelected) {
+    //console.log(productSelected);
+
+    if (productSelected) {      
       setProductData(productSelected);
       // Sugested products filtering
-      const filteredProducts = allProducts.filter(product => product.category.id === productSelected.category.id)
-      const filteredProductsFixed = filteredProducts.filter(product => product.id !== productSelected.id)
-      setSugestedProducts(filteredProductsFixed)
-    } else {
-      navigate('*');
+      const filteredProducts = allProducts.filter(product => product.category.id === productSelected.category.id);
+      const filteredProductsFixed = filteredProducts.filter(product => product.id !== productSelected.id);
+      setSugestedProducts(filteredProductsFixed);
     }
 
-  }, [allProducts, productId])
+    const timer = setTimeout(() => {      
+      if (!productSelected) {
+        navigate('/product/error/404')
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
 
+  }, [allProducts, productId, navigate]);
+  
   //console.log(productData)
   //console.log(sugestedProducts)
 
@@ -72,7 +78,7 @@ const ProductDetailed = () => {
     <div className='product-detailed-container'>
       <div className="pd-btn-container" data-aos="fade-right">
         <button onClick={() => navigate('/') /*-1*/}>
-          <i className='bx bxs-chevron-left bx-sm'></i>
+          <i className="bi bi-arrow-left"></i>
           <p>BACK</p>
         </button>
       </div>
@@ -132,21 +138,21 @@ const ProductDetailed = () => {
           </div>
           <div className="pd-description-container__additional" data-aos="fade-up">
             <div className="additional-container">
-              <i className='bx bx-credit-card-front bx-sm'></i>
+              <i className="bi bi-credit-card"></i>
               <div className="additional-container__description">
                 <h3>PAYMENT</h3>
                 <p>Credit card, debit card or PayPal</p>
               </div>
             </div>
             <div className="additional-container">
-              <i className='bx bx-package bx-sm'></i>
+              <i className="bi bi-truck"></i>
               <div className="additional-container__description">
                 <h3>SHIPPING & DELIVERY</h3>
                 <p>Complimentary Green Delivery</p>
               </div>
             </div>
             <div className="additional-container">
-              <i className='bx bx-rotate-right bx-sm'></i>
+              <i className="bi bi-arrow-counterclockwise"></i>
               <div className="additional-container__description">
                 <h3>RETURNS & EXCHANGES</h3>
                 <p>Complimentary</p>
