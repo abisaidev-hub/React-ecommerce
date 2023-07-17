@@ -10,7 +10,9 @@ import 'aos/dist/aos.css';
 function App() {
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   }, []);
 
   const isLoading = useSelector(state => state.isLoading);

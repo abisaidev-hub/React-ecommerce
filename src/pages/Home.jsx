@@ -126,6 +126,7 @@ const Home = () => {
           }
           <button onClick={filterNav} className='btn-for-filter'>
             <i className="bi bi-sliders"></i>
+            <p className="btn-for-filter__text show-desktop">Filter</p>
           </button>
           {isShowing &&
             <FilterByCategory categories={categories}/>
