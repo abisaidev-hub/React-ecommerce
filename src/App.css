@@ -416,6 +416,10 @@ nav{
   width: 100%;
 }
 
+.bi-emoji-frown::before{
+  font-size: x-large;
+}
+
 .cart-container{
   background-color: rgb(243, 243, 243);
   width: 80%;
@@ -1194,6 +1198,10 @@ nav{
 
 .active__user-created{
   transform: translate(0, 60px);
+}
+
+.bi-emoji-smile::before{
+  font-size: small;
 }
 
 .login-container{

@@ -153,7 +153,7 @@ const Cart = () => {
         </div>
         ) : (
           <div className='cart-empty'>
-            <h2>Your cart is empty :{'('}</h2>
+            <h2>Your cart is empty <i className="bi bi-emoji-frown"></i></h2>
             <i className="bi bi-cart"></i>
           </div>
         )

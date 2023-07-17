@@ -148,13 +148,13 @@ const Login = () => {
         </button>
       </div>
       <div className="login-test-container" data-aos="fade-up">
-        <p><b>DON'T WANT TO CREATE AN ACCOUNT? YOU CAN USE THE FOLLOWING CREDENTIALS</b></p>
+        <p>DON'T WANT TO CREATE AN ACCOUNT? YOU CAN USE THE FOLLOWING CREDENTIALS</p>
         <div className="login-test-credentials-container">
           <p>abisai@test.com</p>
           <p>test1234</p>
           {/*<button onClick={useTestCredentials}>Use credentials</button>*/}
         </div>
-        <p><b>FOR FULL EXPERIENCE, PLEASE CREATE AN ACCOUNT<br/>{'(HIGHLY RECOMMENDED ;))'}</b></p>
+        <p>FOR <b>FULL EXPERIENCE</b>, PLEASE CREATE AN ACCOUNT<br/>&#40;HIGHLY RECOMMENDED <i className="bi bi-emoji-smile"></i>&#41;</p>
       </div>
     </div>
   );
